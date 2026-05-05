@@ -69,11 +69,11 @@
         <a href="projects.html" class="btn primary">Explore projects</a>
         <a href="contact.html" class="btn secondary">Partner With Us</a>
       </div>
-      <div class="hero-tags">
+      <!-- <div class="hero-tags">
         <span>Net Zero</span>
         <span>Green Jobs</span>
         <span>Skills for the Future</span>
-      </div>
+      </div> -->
     </div>
     <div class="hero-media">
       <div class="video-wrapper">
@@ -85,6 +85,7 @@
         </iframe> -->
 
         <!-- <img src="Hub Team.jpg" alt="Hub Team" /> -->
+
 
 <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
 
@@ -101,12 +102,19 @@
     </radialGradient>
   </defs>
 
+  <!-- Background -->
   <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- Top label -->
+  <text x="400" y="40" text-anchor="middle"
+        fill="#ECEBEA" font-size="20" font-family="Roboto Slab, serif" letter-spacing="3">
+    OUR PARTNERS SURROUND THE HUB
+  </text>
 
   <!-- Central glow -->
   <circle cx="400" cy="220" r="120" fill="url(#glow)">
-    <animate attributeName="r" values="110;130;110" dur="7s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="110;135;110" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.25;0.55;0.25" dur="6s" repeatCount="indefinite"/>
   </circle>
 
   <!-- Main circle -->
@@ -126,55 +134,102 @@
     PEOPLE <•> PLANET <•> PARTNERSHIP
   </text>
 
-  <!-- FLOATING PARTNERS -->
+  <!-- ========================= -->
+  <!--     PARTNER NODES        -->
+  <!-- ========================= -->
 
-  <!-- UKSPF -->
-  <g id="ukspfNode" transform="translate(400 70)">
-    <circle r="8" fill="#00A06E" />
-    <text x="0" y="-18" text-anchor="middle" fill="#ECEBEA" font-size="11">UKSPF</text>
+  <!-- UKSPF (Left) -->
+  <g transform="translate(180 220)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="-18" text-anchor="middle" fill="#ECEBEA" font-size="12">UKSPF</text>
     <animate attributeName="transform"
-             dur="6s"
-             repeatCount="indefinite"
-             values="translate(400 70); translate(400 60); translate(400 70)" />
+             dur="2.8s" repeatCount="indefinite"
+             values="translate(180 220); translate(140 260); translate(180 220)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
   </g>
 
-  <!-- KINGSTON HIVE -->
-  <g id="khNode" transform="translate(610 210)">
-    <circle r="8" fill="#00A06E" />
-    <text x="0" y="-18" text-anchor="middle" fill="#ECEBEA" font-size="11">KINGSTON HIVE</text>
+  <!-- Kingston Hive (Right) -->
+  <g transform="translate(620 220)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="-18" text-anchor="middle" fill="#ECEBEA" font-size="12">KINGSTON HIVE</text>
     <animate attributeName="transform"
-             dur="7s"
-             repeatCount="indefinite"
-             values="translate(610 210); translate(610 200); translate(610 210)" />
+             dur="3.2s" repeatCount="indefinite"
+             values="translate(620 220); translate(660 180); translate(620 220)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
   </g>
 
-  <!-- GREENER LONDON -->
-  <g id="glNode" transform="translate(260 345)">
-    <circle r="8" fill="#00A06E" />
-    <text x="0" y="26" text-anchor="middle" fill="#ECEBEA" font-size="11">GREENER LONDON</text>
+  <!-- Greener London (Lower-left) -->
+  <g transform="translate(260 345)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="26" text-anchor="middle" fill="#ECEBEA" font-size="12">GREENER LONDON</text>
     <animate attributeName="transform"
-             dur="8s"
-             repeatCount="indefinite"
-             values="translate(260 345); translate(260 355); translate(260 345)" />
+             dur="3.5s" repeatCount="indefinite"
+             values="translate(260 345); translate(230 390); translate(260 345)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
   </g>
 
-  <!-- COMMUNITY BRAIN -->
-  <g id="cbNode" transform="translate(560 340)">
-    <circle r="8" fill="#00A06E" />
-    <text x="0" y="26" text-anchor="middle" fill="#ECEBEA" font-size="11">COMMUNITY BRAIN</text>
+  <!-- Community Brain (Lower-right) -->
+  <g transform="translate(560 340)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="26" text-anchor="middle" fill="#ECEBEA" font-size="12">COMMUNITY BRAIN</text>
     <animate attributeName="transform"
-             dur="9s"
-             repeatCount="indefinite"
-             values="translate(560 340); translate(560 330); translate(560 340)" />
+             dur="3.1s" repeatCount="indefinite"
+             values="translate(560 340); translate(590 300); translate(560 340)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Mayor of London (Upper-left) -->
+  <g transform="translate(260 120)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="-18" text-anchor="middle" fill="#ECEBEA" font-size="12">MAYOR OF LONDON</text>
+    <animate attributeName="transform"
+             dur="3.4s" repeatCount="indefinite"
+             values="translate(260 120); translate(230 90); translate(260 120)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
+  </g>
+
+  <!-- Big Growth (Upper-right) -->
+  <g transform="translate(540 120)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="-18" text-anchor="middle" fill="#ECEBEA" font-size="12">BIG GROWTH</text>
+    <animate attributeName="transform"
+             dur="2.9s" repeatCount="indefinite"
+             values="translate(540 120); translate(570 90); translate(540 120)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
+  </g>
+
+  <!-- University of Roehampton (Lower-centre) -->
+  <g transform="translate(400 400)">
+    <circle r="9" fill="#00A06E" />
+    <text x="0" y="26" text-anchor="middle" fill="#ECEBEA" font-size="12">UNIVERSITY OF ROEHAMPTON</text>
+    <animate attributeName="transform"
+             dur="3.3s" repeatCount="indefinite"
+             values="translate(400 360); translate(400 395); translate(400 360)"
+             keyTimes="0;0.5;1"
+             calcMode="spline"
+             keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
   </g>
 
   <!-- Bottom tagline -->
-  <text x="400" y="420" text-anchor="middle"
+  <!-- <text x="400" y="420" text-anchor="middle"
         fill="#ECEBEA" font-size="20" font-family="Roboto Slab, serif" letter-spacing="4">
     PEOPLE • PLANET • PARTNERSHIP
-  </text>
+  </text> -->
 
 </svg>
+
 
 
 
@@ -207,6 +262,9 @@
     <h2>Upcoming Events</h2>
     <p>Workshops, roundtables, and community activities.</p>
   </div>
+  <!-- <div class="center">
+    <a href="events.html" class="btn primary">View All Events</a>
+  </div> -->
   <div class="event-grid">
 
     <!-- <article class="event-card">
@@ -230,6 +288,9 @@
       <a href="https://www.instagram.com/greenskills_?igsh=bXJsNjM1cGhsYzZo" class="btn secondary">Learn More</a>
     </article>
 
+    <div class="center">
+  <a href="events.html" class="btn primary">View All Events</a>
+</div>
 
     <article class="event-card">
       <span class="event-date">12 May 2026</span>
@@ -250,9 +311,9 @@
 
   </div>
 
-  <div class="center">
+  <!-- <div class="center">
     <a href="events.html" class="btn primary">View All Events</a>
-  </div>
+  </div> -->
 </section>
 
 
