@@ -851,7 +851,7 @@ textarea {
 }
 
 .accordion-item {
-  background: #063532;
+  background: rgba(15, 23, 42, 0.95);
   border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 1rem;
   overflow: hidden;
@@ -1186,8 +1186,56 @@ textarea {
   color: var(--accent-strong);
 }
 
+/* ALII expanded section */
+.alii-expanded {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
 
+/* Gallery inside card */
+.alii-gallery {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+  grid-template-columns: 1fr;
+}
 
+@media (min-width: 480px) {
+  .alii-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media (min-width: 900px) {
+  .alii-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+.alii-image-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
 
+.alii-image-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Smaller pill button */
+.small-pill {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}

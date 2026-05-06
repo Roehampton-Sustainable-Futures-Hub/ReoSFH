@@ -167,3 +167,24 @@ function setupAboutCardCollapsible() {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', setupAboutCardCollapsible);
+
+
+
+</script>
+
+// Expandable ALII section inside project card
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".alii-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".project-card");
+      const expanded = card.querySelector(".alii-expanded");
+
+      expanded.style.display =
+        expanded.style.display === "block" ? "none" : "block";
+
+      button.textContent =
+        expanded.style.display === "block" ? "Hide" : "Learn More";
+    });
+  });
+});
+
