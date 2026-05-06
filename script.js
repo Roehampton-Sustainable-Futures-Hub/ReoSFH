@@ -121,3 +121,49 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     }
   });
 });
+
+// Collapsible about cards for mobile
+function setupAboutCardCollapsible() {
+  // Only apply on mobile (max-width: 720px)
+  if (window.innerWidth > 720) return;
+
+  const aboutCards = document.querySelectorAll('.about-card:not(.team-card)');
+
+  aboutCards.forEach(card => {
+    const content = card.querySelector('p');
+    if (!content) return;
+
+    // Create a toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.textContent = '⋯ More';
+    toggleBtn.className = 'about-toggle-btn mobile-toggle';
+    toggleBtn.setAttribute('aria-expanded', 'false');
+
+    // Initially hide the content
+    content.style.display = 'none';
+
+    // Insert button after h3
+    const h3 = card.querySelector('h3');
+    if (h3) {
+      h3.insertAdjacentElement('afterend', toggleBtn);
+    }
+
+    // Add event listener
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        content.style.display = 'none';
+        toggleBtn.textContent = '⋯ More';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        content.style.display = 'block';
+        toggleBtn.textContent = '⋯ Less';
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', setupAboutCardCollapsible);
