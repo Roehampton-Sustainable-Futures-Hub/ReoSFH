@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', setupAboutCardCollapsible);
 
 
 
-</script>
+// </script>
 
 // Expandable ALII section inside project card
 document.addEventListener("DOMContentLoaded", () => {
