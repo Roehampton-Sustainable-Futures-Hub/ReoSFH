@@ -188,3 +188,70 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// ============================================================
+// HOME PAGE — 4-CARD DESKTOP TAB SWITCHER
+// Paste at END of script.js
+// ============================================================
+
+(function () {
+  document.querySelectorAll('.home-tab-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // Deactivate all buttons + panels
+      document.querySelectorAll('.home-tab-btn').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      document.querySelectorAll('.home-tab-panel').forEach(function (p) {
+        p.classList.remove('active');
+      });
+
+      // Activate clicked
+      btn.classList.add('active');
+      var target = btn.getAttribute('data-tab');
+      var panel = document.getElementById(target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+
+
+// ============================================================
+// EVENTS CAROUSEL — replace old carousel block in script.js
+// ============================================================
+
+(function () {
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  let current = 0;
+
+  function perView() {
+    return window.innerWidth >= 721 ? 3 : 1;
+  }
+
+  function update() {
+    const pv = perView();
+    const max = slides.length - pv;
+    if (current > max) current = max;
+    if (current < 0) current = 0;
+    track.style.transform = 'translateX(-' + (current * (100 / pv)) + '%)';
+  }
+
+  document.getElementById('carouselNext')?.addEventListener('click', function () {
+    const pv = perView();
+    const max = slides.length - pv;
+    current = current >= max ? 0 : current + pv;
+    update();
+  });
+
+  document.getElementById('carouselPrev')?.addEventListener('click', function () {
+    const pv = perView();
+    const max = slides.length - pv;
+    current = current <= 0 ? max : current - pv;
+    update();
+  });
+
+  window.addEventListener('resize', update);
+  update();
+})();

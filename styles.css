@@ -1239,3 +1239,365 @@ textarea {
   display: inline-block;
   margin-top: 0.5rem;
 }
+
+
+/* ============================================================
+   MOBILE RESPONSIVE FIXES — paste these at the END of styles.css
+   (they override earlier rules via cascade)
+   ============================================================ */
+
+/* ── About grid: responsive columns ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 0 5vw 2rem;
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    padding-inline: 1.25rem;
+  }
+
+  /* ── Tab nav: always hidden on mobile unless JS adds it ── */
+  .about-tabs-nav {
+    display: none;           /* hidden by default */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* JS adds .is-tabbed to .about-grid to activate mobile tab mode */
+  .about-grid.is-tabbed .about-tabs-nav {
+    display: flex;           /* show the nav */
+  }
+
+  /* In tab mode, hide all cards by default; JS shows the active one */
+  .about-grid.is-tabbed .about-card {
+    display: none;
+  }
+
+  .about-grid.is-tabbed .about-card.tab-active {
+    display: block;
+  }
+}
+
+/* ── Team card: mobile two-col layout ── */
+@media (max-width: 720px) {
+  .team-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    column-gap: 1rem;
+    row-gap: 0.25rem;
+    align-items: start;
+    text-align: left;
+  }
+
+  .team-card .team-photo {
+    width: 90px;
+    height: 90px;
+    margin: 0;
+    grid-column: 1;
+    grid-row: 1 / 5;
+  }
+
+  .team-card h3,
+  .team-card .bio-short {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .team-card .bio-full,
+  .team-card .read-more-btn,
+  .team-card a.btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ── CTA section: full width on mobile ── */
+@media (max-width: 720px) {
+  .cta-section {
+    margin: 1.5rem 1rem;
+    padding: 2rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================================
+   HOME PAGE — 4-CARD DESKTOP TABS
+   Paste at END of styles.css
+   ============================================================ */
+
+/* ── Hide/show per breakpoint ── */
+.home-accordion-mobile { display: none; }
+.home-tabs-desktop     { display: block; }
+
+@media (max-width: 720px) {
+  .home-accordion-mobile { display: block; }
+  .home-tabs-desktop     { display: none; }
+}
+
+/* ── Desktop tab nav: 4 equal cards ── */
+.home-tabs-desktop {
+  margin: 1.5rem 0 0;
+}
+
+.home-tab-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 0;
+}
+
+.home-tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  background: rgba(6, 53, 50, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-bottom: 3px solid transparent;
+  border-radius: 0.75rem 0.75rem 0 0;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  text-align: left;
+}
+
+.home-tab-btn:hover {
+  background: rgba(0, 160, 110, 0.12);
+  border-color: rgba(0, 160, 110, 0.4);
+}
+
+.home-tab-btn.active {
+  background: var(--bg-alt);
+  border-color: var(--border-subtle);
+  border-bottom-color: var(--accent);
+}
+
+.htb-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.home-tab-btn.active .htb-label {
+  color: var(--accent);
+}
+
+.htb-sub {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ── Panel area ── */
+.home-tab-panels {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0 0 0.75rem 0.75rem;
+  padding: 1.75rem 2rem;
+  min-height: 180px;
+}
+
+.home-tab-panel {
+  display: none;
+  animation: htFade 0.18s ease;
+}
+
+.home-tab-panel.active {
+  display: block;
+}
+
+@keyframes htFade {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.home-tab-panel h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+
+.home-tab-panel p {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.75;
+  margin: 0 0 0.75rem;
+}
+
+.home-tab-panel ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.home-tab-panel li {
+  margin-bottom: 0.35rem;
+}
+
+/*Fixing the Hero and Text  */
+/*in the home page  */
+/*  so that they align*/
+
+
+@media (min-width: 961px) {
+  /* .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  } */
+}
+
+.hero-content p {
+  text-align: justify;
+  max-width: 100%;
+}
+
+
+/* FIXING ACCORDION TEXT VISIBILITY */
+.accordion-content {
+  color: #ECEBEA !important;
+}
+
+.accordion-content p,
+.accordion-content ul,
+.accordion-content li {
+  color: #ECEBEA !important;
+}
+
+.accordion-header {
+  /* background: #00A06E; */
+  color: #ECEBEA;
+}
+
+.accordion-header:hover {
+  background: #007A55;
+  color: #ECEBEA;
+}
+
+/* ============================================================
+   EVENTS CAROUSEL — replace old carousel block in styles.css
+   ============================================================ */
+
+.events-carousel {
+  width: 100%;
+  margin: 1.5rem 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Desktop: 3 slides visible */
+.carousel-slide {
+  flex: 0 0 33.333%;
+  position: relative;
+  height: 200px;
+  padding: 0 0.4rem;
+  box-sizing: border-box;
+}
+
+/* Mobile: 1 slide visible */
+@media (max-width: 720px) {
+  .carousel-slide {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.75rem;
+  background: #063532;
+}
+
+.carousel-slide span {
+  display: block;
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.4rem;
+  right: 0.4rem;
+  background: rgba(6, 53, 50, 0.8);
+  color: #ECEBEA;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  font-family: var(--font-main);
+  border-radius: 0 0 0.6rem 0.6rem;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.carousel-btn {
+  background: #00A06E;
+  border: none;
+  color: #ECEBEA;
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: #007A55;
+}
+
+
+/* Accordion spacing on mobile */
+.home-accordion-mobile .accordion-item {
+  margin-bottom: 0.75rem;
+}
+
+/* Fix unreadable tab button text on desktop */
+.home-tab-btn .htb-sub {
+  color: #ECEBEA;
+  opacity: 0.7;
+}
+
+.home-tab-btn:not(.active) .htb-label {
+  color: #ECEBEA;
+}
+
+.home-tab-btn:not(.active) {
+  background: rgba(6, 53, 50, 0.85);
+}
