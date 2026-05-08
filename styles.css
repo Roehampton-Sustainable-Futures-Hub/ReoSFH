@@ -116,7 +116,7 @@ body {
   position: relative;
 }
 
-.main-nav a:hover {
+/* .main-nav a:hover {
   color: var(--accent);
   bottom: -0.25rem;
   width: 0;
@@ -125,12 +125,30 @@ body {
   transition: width 0.2s ease;
 } */
 
-.main-nav a:hover {
-  color: var(--text-main);
+/* .main-nav a:hover {
+  color: var(--accent);
+} */
+
+.main-nav a {
+  color: #F2EEE9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
 }
 
-.main-nav a:hover::after {
+/* .main-nav a:hover {
+  color: var(--text-main);
+} */
+
+/* .main-nav a:hover::after {
   width: 100%;
+} */
+
+
+.main-nav a:hover {
+  color: #4CCFA3;
 }
 
 .nav-toggle {
@@ -775,7 +793,7 @@ textarea {
   }
 
   .main-nav {
-    position: absolute;
+    position: fixed;
     top: 56px;
     right: 1rem;
     flex-direction: column;
@@ -784,6 +802,8 @@ textarea {
     border-radius: 0.75rem;
     border: 1px solid rgba(148, 163, 184, 0.25);
     display: none;
+    z-index: 100;
+    min-width: 160px;
   }
 
   .main-nav.open {
@@ -1600,4 +1620,102 @@ textarea {
 
 .home-tab-btn:not(.active) {
   background: rgba(6, 53, 50, 0.85);
+}
+
+
+/* ===============================
+      FIXING THE NAV BAR HOVER 
+==================================*/
+/* Underline on nav hover */
+.main-nav a {
+  position: relative;
+  display: inline-block;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 0;
+  height: 2px;
+  background: #4CCFA3;
+  transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Smaller mobile nav dropdown */
+@media (max-width: 720px) {
+  .main-nav {
+    min-width: 120px;
+    width: auto;
+    padding: 0.5rem 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ==================================
+  FIXING THE NAV BAR HOVER COLOR 
+==================================*/
+@media (max-width: 720px) {
+  .main-nav {
+    width: auto;
+    min-width: 0;
+    padding: 0.6rem 1rem;
+    gap: 0.6rem;
+    right: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+
+.main-nav a::after {
+  background: #007A55;
+}
+
+
+/* ==================================
+Styling of about - The hub team
+==================================*/
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-card .team-photo {
+  margin: 0 auto 1rem;
+}
+
+@media (max-width: 720px) {
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-card h3,
+  .team-card .bio-short {
+    text-align: center;
+  }
+
+  .team-card .bio-full,
+  .team-card .read-more-btn,
+  .team-card a.btn {
+    width: 100%;
+    text-align: center;
+  }
 }
