@@ -34,7 +34,7 @@
 
       emailjs.send("service_gbyzkuc", "template_u78yj1i", params)
         .then(function () {
-          note.textContent = "Thank you — your message has been sent. We will be in touch shortly.";
+          note.textContent = "Thank you, your message has been sent. We will be in touch shortly.";
           note.style.color = "#00A06E";
           document.getElementById("contactForm").reset();
           btn.textContent = "Send Message";
@@ -126,7 +126,8 @@
 
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, idea or question — we read every message"></textarea>
+          <textarea id="message" name="message" rows="5" 
+          placeholder="Tell us about your project, idea or question, we read every message"></textarea>
         </div>
 
         <button type="submit" id="submitBtn" class="btn primary">Send Message</button>
