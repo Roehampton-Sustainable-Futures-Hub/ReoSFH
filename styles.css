@@ -1764,3 +1764,37 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
   color: #ECEBEA;
   border-color: #4CCFA3;
 }
+
+
+/* ===============================================
+  FIXING CONTACT FORM COLORS TO BE VISIBLE
+====================================================*/
+/* Contact form fixes */
+.contact-form label {
+  color: #ECEBEA;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: #0d2b28;
+  color: #ECEBEA;
+  border-color: #00A06E;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(236, 235, 234, 0.5);
+}
+
+.contact-form select option {
+  background: #063532;
+  color: #ECEBEA;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #4CCFA3;
+  box-shadow: 0 0 0 1px rgba(76, 207, 163, 0.3);
+}
