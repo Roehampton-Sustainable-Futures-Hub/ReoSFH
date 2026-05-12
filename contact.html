@@ -8,6 +8,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "Y8ZltrA1mcrySyiaF" });
+    })();
+
+    function sendEmail(e) {
+      e.preventDefault();
+
+      const btn = document.getElementById("submitBtn");
+      const note = document.getElementById("formNote");
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+
+      const params = {
+        name:     document.getElementById("name").value,
+        email:    document.getElementById("email").value,
+        role:     document.getElementById("role").value,
+        interest: document.getElementById("interest").value,
+        message:  document.getElementById("message").value,
+      };
+
+      emailjs.send("service_gbyzkuc", "template_u78yj1i", params)
+        .then(function () {
+          note.textContent = "Thank you — your message has been sent. We will be in touch shortly.";
+          note.style.color = "#00A06E";
+          document.getElementById("contactForm").reset();
+          btn.textContent = "Send Message";
+          btn.disabled = false;
+        }, function (error) {
+          note.textContent = "Something went wrong. Please email us directly at sustainabilitycommunityproject@gmail.com";
+          note.style.color = "#f97373";
+          btn.textContent = "Send Message";
+          btn.disabled = false;
+        });
+    }
+  </script>
 </head>
 <body>
 
@@ -44,17 +83,7 @@
     <div class="contact-grid">
 
       <!-- FORM -->
-      <form
-        class="contact-form"
-        
-        action="https://formsubmit.co/c2VzdGFpbmFiaWxpdHljb21tdW5pdHlwcm9qZWN0QGdtYWlsLmNvbQ=="
-        method="POST">
-
-        <!-- Formsubmit configuration -->
-        <input type="hidden" name="_subject" value="New enquiry from RSFH website">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="contact.html">
-        <input type="hidden" name="_template" value="table">
+      <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
 
         <div class="form-row">
           <div class="form-group">
@@ -70,27 +99,27 @@
         <div class="form-row">
           <div class="form-group">
             <label for="role">I am</label>
-            <select id="role" name="I am">
-              <option value="community">A community organisation or NGO</option>
-              <option value="council">A local authority or public body</option>
-              <option value="sme">A business or SME</option>
-              <option value="resident">A resident or individual</option>
-              <option value="researcher">A researcher or academic</option>
-              <option value="student">A student</option>
-              <option value="partner">A potential funder or partner</option>
-              <option value="other">Other</option>
+            <select id="role" name="role">
+              <option value="A community organisation or NGO">A community organisation or NGO</option>
+              <option value="A local authority or public body">A local authority or public body</option>
+              <option value="A business or SME">A business or SME</option>
+              <option value="A resident or individual">A resident or individual</option>
+              <option value="A researcher or academic">A researcher or academic</option>
+              <option value="A student">A student</option>
+              <option value="A potential funder or partner">A potential funder or partner</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div class="form-group">
             <label for="interest">Area of interest</label>
-            <select id="interest" name="Area of interest">
-              <option value="green-skills">Green skills &amp; workforce development</option>
-              <option value="air-quality">Air quality &amp; nature-based solutions</option>
-              <option value="community-hubs">Community climate hubs</option>
-              <option value="research">Applied research &amp; evaluation</option>
-              <option value="partnership">Partnership &amp; funding</option>
-              <option value="circular">Circular economy &amp; retrofit</option>
-              <option value="other">Other</option>
+            <select id="interest" name="interest">
+              <option value="Green skills & workforce development">Green skills &amp; workforce development</option>
+              <option value="Air quality & nature-based solutions">Air quality &amp; nature-based solutions</option>
+              <option value="Community climate hubs">Community climate hubs</option>
+              <option value="Applied research & evaluation">Applied research &amp; evaluation</option>
+              <option value="Partnership & funding">Partnership &amp; funding</option>
+              <option value="Circular economy & retrofit">Circular economy &amp; retrofit</option>
+              <option value="Other">Other</option>
             </select>
           </div>
         </div>
@@ -100,7 +129,7 @@
           <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, idea or question — we read every message"></textarea>
         </div>
 
-        <button type="submit" class="btn primary">Send Message</button>
+        <button type="submit" id="submitBtn" class="btn primary">Send Message</button>
         <p class="form-note" id="formNote"></p>
       </form>
 
