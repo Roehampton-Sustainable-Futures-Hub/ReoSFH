@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roehampton Sustainable Futures Hub | Publications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <style>
+    .pub-hero {
+      padding: 3rem 5vw 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .pub-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--text-main);
+      margin: 0 0 0.5rem;
+    }
+    .pub-hero p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 52rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .pub-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1.5rem 5vw 0;
+    }
+    .pub-filter-btn {
+      background: rgba(6, 53, 50, 0.6);
+      border: 1px solid var(--border-subtle);
+      color: #ECEBEA;
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: var(--font-main);
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .pub-filter-btn:hover,
+    .pub-filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .pub-list {
+      padding: 1.5rem 5vw 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 900px;
+    }
+
+    .pub-card {
+      background: rgba(6, 53, 50, 0.95);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .pub-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .pub-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+    .badge-report   { background: rgba(0,160,110,0.2); color: #4CCFA3; border: 1px solid rgba(0,160,110,0.4); }
+    .badge-fieldwork { background: rgba(76,207,163,0.15); color: #4CCFA3; border: 1px solid rgba(76,207,163,0.35); }
+    .badge-community { background: rgba(255,200,80,0.15); color: #FACC60; border: 1px solid rgba(255,200,80,0.3); }
+
+    .pub-year {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .pub-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: #F2EEE9;
+      margin: 0 0 0.4rem;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      font-size: 0.85rem;
+      color: #4CCFA3;
+      margin: 0 0 0.75rem;
+      font-style: italic;
+    }
+
+    .pub-source {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+    }
+    .pub-source strong {
+      color: #ECEBEA;
+    }
+
+    .pub-abstract {
+      font-size: 0.92rem;
+      color: rgba(242, 238, 233, 0.88);
+      line-height: 1.75;
+      margin: 0 0 1rem;
+    }
+
+    .pub-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .pub-keyword {
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ECEBEA;
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+    }
+
+    .pub-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 0 0 1rem;
+    }
+
+    .pub-findings {
+      margin: 0 0 1.25rem;
+    }
+    .pub-findings h4 {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: #4CCFA3;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin: 0 0 0.5rem;
+    }
+    .pub-findings ul {
+      padding-left: 1.1rem;
+      margin: 0;
+      color: rgba(242,238,233,0.88);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+    .pub-findings ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .pub-actions a {
+      font-size: 0.85rem;
+    }
+    .pub-cite-toggle {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #ECEBEA;
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: var(--font-main);
+      transition: background 0.2s ease;
+    }
+    .pub-cite-toggle:hover {
+      background: rgba(255,255,255,0.07);
+    }
+
+    .pub-cite-block {
+      display: none;
+      margin-top: 1rem;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.6rem;
+      padding: 1rem 1.25rem;
+    }
+    .pub-cite-block p {
+      font-size: 0.83rem;
+      color: #ECEBEA;
+      line-height: 1.65;
+      font-family: var(--font-main);
+      margin: 0;
+    }
+    .pub-cite-block .cite-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4CCFA3;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    @media (max-width: 720px) {
+      .pub-list { padding-inline: 1.25rem; }
+      .pub-hero { padding-inline: 1.25rem; }
+      .pub-filters { padding-inline: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">
+    <a href="index.html">
+      <img src="Roehampton Sustainable Futures hub logo.png" class="logo-img" alt="Roehampton Sustainable Futures Hub">
+    </a>
+    <span class="logo-text">Roehampton Sustainable Futures Hub</span>
+  </div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="events.html">Events</a>
+    <a href="publications.html" class="active">Publications</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle">☰</button>
+</header>
+
+<main>
+
+  <div class="pub-hero">
+    <h1>Publications &amp; Field Reports</h1>
+    <p>Research outputs, community engagement reports, and event findings from the Roehampton Sustainable Futures Hub. Our publications document evidence gathered through applied research, community forums, and academic collaboration.</p>
+  </div>
+
+  <div class="pub-filters">
+    <button class="pub-filter-btn active" data-filter="all">All</button>
+    <button class="pub-filter-btn" data-filter="community-engagement">Community Engagement</button>
+    <button class="pub-filter-btn" data-filter="green-skills">Green Skills</button>
+    <button class="pub-filter-btn" data-filter="sustainability">Sustainability</button>
+    <button class="pub-filter-btn" data-filter="industrial-estates">Industrial Estates</button>
+    <button class="pub-filter-btn" data-filter="community-resilience">Community Resilience</button>
+    <button class="pub-filter-btn" data-filter="kingston">Kingston</button>
+  </div>
+
+  <div class="pub-list">
+
+    <!-- PUBLICATION 1: Academic Collaboration Showcase -->
+    <article class="pub-card" data-tags="community-engagement green-skills sustainability">
+      <div class="pub-meta-row">
+        <span class="pub-badge badge-report">Field Report</span>
+        <span class="pub-badge badge-community">Community Engagement</span>
+        <span class="pub-badge badge-fieldwork">Green Skills</span>
+        <span class="pub-year">May 2026</span>
+      </div>
+
+      <h2>Green Skills for South London: Findings from the Academic Collaboration Showcase, University of Roehampton</h2>
+      <p class="pub-authors">Kamble, R., Tiwari, A., Idugboe, E., Yankson, J., Abboah-Offei, A., Erdogan Onur, B., Uzochukwu, J., &amp; Demir, A.</p>
+      <p class="pub-source">
+        <strong>Presented at:</strong> Academic Collaboration Showcase, University of Roehampton, London, UK &nbsp;|&nbsp;
+        <strong>Date:</strong> 12 May 2026 &nbsp;|&nbsp;
+        <strong>Project:</strong> Green Skills for South London, Roehampton Sustainable Futures Hub
+      </p>
+
+      <p class="pub-abstract">
+        This report documents the findings and engagement outcomes from the Green Skills for South London project presentation at the University of Roehampton's Academic Collaboration Showcase (12 May 2026). The showcase brought together academics, council representatives, small and medium-sized enterprise (SME) professionals, engineers, healthcare workers, sustainability organisations, and international attendees from the United Kingdom and the Netherlands. The session generated substantive discussions on green skills development, sustainable business practices, waste management, and community-centred approaches to industrial sustainability. This report synthesises the key themes emerging from those discussions and outlines their implications for the future direction of the project.
+      </p>
+
+      <div class="pub-keywords">
+        <span class="pub-keyword">Green Skills</span>
+        <span class="pub-keyword">South London</span>
+        <span class="pub-keyword">SME Sustainability</span>
+        <span class="pub-keyword">Waste Management</span>
+        <span class="pub-keyword">Community Engagement</span>
+        <span class="pub-keyword">Industrial Estates</span>
+        <span class="pub-keyword">Circular Economy</span>
+        <span class="pub-keyword">Academic Collaboration</span>
+      </div>
+
+      <hr class="pub-divider">
+
+      <div class="pub-findings">
+        <h4>Key Findings</h4>
+        <ul>
+          <li>Attendees identified excessive packaging waste and takeaway culture as significant environmental challenges for SMEs, with strong demand for practical guidance on waste reduction.</li>
+          <li>Post-COVID decline in inter-business communication across industrial estates was widely recognised, with participants emphasising the need to rebuild local networks and peer-to-peer knowledge exchange.</li>
+          <li>International interest was recorded, with visitors from the Netherlands sharing parallel Green Skills initiatives, indicating potential for cross-border knowledge transfer and partnership development.</li>
+          <li>Underused community spaces on and around industrial estates were highlighted as untapped assets for sustainability-focused programming and community learning.</li>
+          <li>Strong appetite was expressed for participatory, community-led research approaches, as demonstrated by the high engagement with the project's interactive activity station.</li>
+          <li>Several professionals and organisations expressed formal interest in collaboration, with contact details, email addresses, and social media information exchanged to support future partnership development.</li>
+        </ul>
+      </div>
+
+      <div class="pub-actions">
+        <button class="pub-cite-toggle" onclick="toggleCite(this)">Cite this report</button>
+        <a href="events.html#academic-showcase" class="btn secondary" style="font-size:0.85rem;">View event</a>
+      </div>
+
+      <div class="pub-cite-block">
+        <span class="cite-label">APA 7th Edition</span>
+        <p>Kamble, R., Tiwari, A., Idugboe, E., Yankson, J., Abboah-Offei, A., Erdogan Onur, B., Uzochukwu, J., &amp; Demir, A. (2026, May 12). <em>Green Skills for South London: Findings from the Academic Collaboration Showcase, University of Roehampton.</em> Field report presented at the Academic Collaboration Showcase, University of Roehampton, London, United Kingdom. Roehampton Sustainable Futures Hub.</p>
+      </div>
+    </article>
+
+
+    <!-- PUBLICATION 2: Community Forum -->
+    <article class="pub-card" data-tags="community-engagement green-skills sustainability industrial-estates">
+      <div class="pub-meta-row">
+        <span class="pub-badge badge-report">Field Report</span>
+        <span class="pub-badge badge-community">Community Engagement</span>
+        <span class="pub-badge badge-fieldwork">Industrial Estates</span>
+        <span class="pub-year">May 2026</span>
+      </div>
+
+      <h2>Chessington Industrial Estate Community Forum: Summary Report on Business Engagement, Sustainability Challenges, and Community Resilience</h2>
+      <p class="pub-authors">Demir, A., Idugboe, E., Yankson, J., Abboah-Offei, A., Erdogan Onur, B., &amp; Uzochukwu, J.</p>
+      <p class="pub-source">
+        <strong>Event:</strong> Chessington Industrial Estate Community Forum &nbsp;|&nbsp;
+        <strong>Venue:</strong> King George's Field Indoor Bowling Club, Jubilee Way, Chessington KT6 7NA &nbsp;|&nbsp;
+        <strong>Date:</strong> 6 May 2026 &nbsp;|&nbsp;
+        <strong>Organised by:</strong> Roehampton Sustainable Futures Hub, University of Roehampton &amp; The Community Brain CIC
+      </p>
+
+      <p class="pub-abstract">
+        This report presents the findings from the first Chessington Industrial Estate Community Forum, held on 6 May 2026 at King George's Field Indoor Bowling Club, Chessington. The forum was convened by the Roehampton Sustainable Futures Hub at the University of Roehampton, in partnership with The Community Brain CIC, as part of the Green Skills for South London project. The event brought together local businesses, workers, community organisations, and strategic partners to facilitate open dialogue on sustainability, green skills, waste management, networking, and the future of the local business ecosystem. This report documents the discussions held, the challenges and opportunities identified by participants, and the key themes emerging from structured and informal engagement across the session.
+      </p>
+
+      <div class="pub-keywords">
+        <span class="pub-keyword">Chessington</span>
+        <span class="pub-keyword">Industrial Estate</span>
+        <span class="pub-keyword">Community Forum</span>
+        <span class="pub-keyword">Green Skills</span>
+        <span class="pub-keyword">Business Resilience</span>
+        <span class="pub-keyword">Sustainability</span>
+        <span class="pub-keyword">SME Collaboration</span>
+        <span class="pub-keyword">Kingston upon Thames</span>
+        <span class="pub-keyword">Post-COVID Recovery</span>
+      </div>
+
+      <hr class="pub-divider">
+
+      <div class="pub-findings">
+        <h4>Key Findings</h4>
+        <ul>
+          <li>Businesses across the estate reported a significant reduction in inter-business communication and collaboration since the COVID-19 pandemic, identifying this as a barrier to collective resilience and sustainability action.</li>
+          <li>Participants identified waste management — particularly materials handling and packaging waste — as a shared operational challenge, with interest in collective and circular economy approaches to address it.</li>
+          <li>Green skills and training emerged as a priority need, with businesses expressing interest in accessible, practically oriented programmes aligned with their day-to-day operations.</li>
+          <li>Attendees highlighted networking and peer learning as underutilised resources, calling for more regular, informal opportunities for businesses to connect across the estate.</li>
+          <li>Strong consensus emerged around the value of community-led, place-based approaches to sustainability, with participants willing to contribute ideas and time to future collaborative activities.</li>
+          <li>Attending businesses included National Rescue, The Protective Textile Company Ltd, and Mollart Engineering (Chessington &amp; Resolven) Limited, alongside a wider range of estate-based workers and organisations.</li>
+        </ul>
+      </div>
+
+      <div class="pub-actions">
+        <button class="pub-cite-toggle" onclick="toggleCite(this)">Cite this report</button>
+        <a href="events.html#chessington-forum" class="btn secondary" style="font-size:0.85rem;">View event</a>
+        <a href="https://www.instagram.com/greenskills_?igsh=bXJsNjM1cGhsYzZo" target="_blank" class="btn secondary" style="font-size:0.85rem;">Follow on Instagram</a>
+      </div>
+
+      <div class="pub-cite-block">
+        <span class="cite-label">APA 7th Edition</span>
+        <p>Demir, A., Idugboe, E., Yankson, J., Abboah-Offei, A., Erdogan Onur, B., &amp; Uzochukwu, J. (2026, May 6). <em>Chessington Industrial Estate Community Forum: Summary report on business engagement, sustainability challenges, and community resilience.</em> Field report, Roehampton Sustainable Futures Hub, University of Roehampton, London, United Kingdom.</p>
+      </div>
+    </article>
+
+
+    <!-- PUBLICATION 3: Kingston Hive Implementation Framework -->
+    <article class="pub-card" data-tags="community-engagement sustainability community-resilience kingston">
+      <div class="pub-meta-row">
+        <span class="pub-badge badge-report">Implementation Framework</span>
+        <span class="pub-badge badge-community">Community Resilience</span>
+        <span class="pub-badge badge-fieldwork">Impact Research</span>
+        <span class="pub-year">2026</span>
+      </div>
+
+      <h2>Kingston Hive Implementation Framework: Operationalising Community-Led Climate Resilience, Social Cohesion, and Sustainable Participation</h2>
+      <p class="pub-authors">Demir, A. (Dir.), Idugboe, E., Abboah-Offei, A., Erdogan Onur, B., Adekola, A., Molina Murillas, G., Jesutowo, F., &amp; Irekeola, M.</p>
+      <p class="pub-source">
+        <strong>Project:</strong> Kingston Hive Impact, Learning &amp; Capacity Project &nbsp;|&nbsp;
+        <strong>Partners:</strong> Kingston Hive, Big Growth, Mayor of London (UKSPF) &nbsp;|&nbsp;
+        <strong>Institution:</strong> University of Roehampton, Roehampton Sustainable Futures Hub &nbsp;|&nbsp;
+        <strong>Year:</strong> 2026
+      </p>
+
+      <p class="pub-abstract">
+        This implementation framework presents a robust, evidence-based system designed to strengthen Kingston Hive's capacity as a community-led climate resilience and social wellbeing hub. Developed through strategic collaboration between Kingston Hive, the University of Roehampton, and a multidisciplinary research team, the framework provides funders with a clear, measurable, and scalable model for community resilience, inclusion, and sustainable development. Drawing on primary survey data (n=15), observational reports, behavioural analysis, business analysis, and spatial design research, the framework integrates five interconnected layers — community engagement, behavioural impact, data and insight, communications and marketing, and operations and governance — into a coherent system that transforms Kingston Hive's lived community impact into a structured, fundable, and replicable model.
+      </p>
+
+      <div class="pub-keywords">
+        <span class="pub-keyword">Community Resilience</span>
+        <span class="pub-keyword">Climate Action</span>
+        <span class="pub-keyword">Social Cohesion</span>
+        <span class="pub-keyword">Behavioural Impact</span>
+        <span class="pub-keyword">Kingston upon Thames</span>
+        <span class="pub-keyword">UKSPF</span>
+        <span class="pub-keyword">Theory of Change</span>
+        <span class="pub-keyword">Community Engagement</span>
+        <span class="pub-keyword">Wellbeing</span>
+        <span class="pub-keyword">Sustainability</span>
+        <span class="pub-keyword">Impact Measurement</span>
+      </div>
+
+      <hr class="pub-divider">
+
+      <div class="pub-findings">
+        <h4>Methods</h4>
+        <ul>
+          <li>Community feedback survey (n=15, mixed electronic and handwritten responses) capturing participant motivations, experiences, and behavioural outcomes.</li>
+          <li>Observational reports from Kingston Hive workshops and community sessions, documenting engagement quality, conversational depth, and participation patterns.</li>
+          <li>Business analysis examining Kingston Hive's operational structure, financial resilience, volunteer capacity, and governance infrastructure.</li>
+          <li>Spatial and psychological design analysis assessing how the physical environment influences community behaviour, trust, and participation.</li>
+          <li>Communications and marketing audit evaluating current engagement pathways, social media consistency, and conversion from awareness to sustained participation.</li>
+          <li>Behavioural impact framework development, mapping activities to outcomes across three domains: inner resilience, social cohesion, and practical preparedness.</li>
+        </ul>
+      </div>
+
+      <div class="pub-findings" style="margin-top:1rem;">
+        <h4>Key Findings</h4>
+        <ul>
+          <li>100% of survey respondents described Kingston Hive as welcoming and non-overwhelming, indicating strong emotional safety as a core organisational strength.</li>
+          <li>Over 50% of participants attend primarily for connection with others, confirming that Kingston Hive functions as a social anchor rather than a conventional programme delivery organisation.</li>
+          <li>35–50% of participants reported increased connection to their community or to people who care about similar issues, demonstrating meaningful social cohesion outcomes.</li>
+          <li>30–35% reported increased awareness of local sustainability issues and resilience initiatives, evidencing informal learning and practical preparedness.</li>
+          <li>20–30% of attendees transitioned into deeper roles including volunteer, facilitator, or community organiser, indicating strong role progression and leadership development.</li>
+          <li>Word of mouth was the primary route into Kingston Hive (42.9%), confirming that engagement is driven by relational trust rather than formal communications.</li>
+          <li>Identified structural gaps include: absence of a centralised data system, inconsistent communications, volunteer dependency and burnout risk, limited unrestricted income, and fragmented operational processes.</li>
+        </ul>
+      </div>
+
+      <div class="pub-findings" style="margin-top:1rem;">
+        <h4>Framework Proposals</h4>
+        <ul>
+          <li>Introduction of a light-touch, three-tier data system (event-level, monthly, and quarterly) to enable consistent, proportionate impact tracking without burdening volunteers.</li>
+          <li>A core impact dashboard built around five priority indicators: Welcoming Score, Connection Motivation Rate, Community Connection Score, Sustainability Awareness Score, and Role Progression Rate.</li>
+          <li>A structured engagement funnel (awareness → interest → participation → retention → ownership) with defined actions at each stage to address current conversion gaps.</li>
+          <li>A 90-day communications implementation plan to improve social media consistency, newsletter growth, and offline-to-online pathway integration.</li>
+          <li>Operational and governance recommendations including defined volunteer roles, structured leadership pathways, and a financial diversification strategy to reduce grant dependency.</li>
+          <li>A Strategic Plan (2026–2028) positioning Kingston Hive for Borough-wide scaling and cross-sector partnership development.</li>
+        </ul>
+      </div>
+
+      <div class="pub-actions">
+        <button class="pub-cite-toggle" onclick="toggleCite(this)">Cite this report</button>
+        <a href="projects.html" class="btn secondary" style="font-size:0.85rem;">View project</a>
+        <a href="https://www.instagram.com/kingstonhive_impact?igsh=c2N0ejV6ZXFqcDlr" target="_blank" class="btn secondary" style="font-size:0.85rem;">Kingston Hive Instagram</a>
+      </div>
+
+      <div class="pub-cite-block">
+        <span class="cite-label">APA 7th Edition</span>
+        <p>Demir, A. (Dir.), Idugboe, E., Abboah-Offei, A., Erdogan Onur, B., Adekola, A., Molina Murillas, G., Jesutowo, F., &amp; Irekeola, M. (2026). <em>Kingston Hive Implementation Framework: Operationalising community-led climate resilience, social cohesion, and sustainable participation.</em> Implementation framework report, Roehampton Sustainable Futures Hub, University of Roehampton, London, United Kingdom. Produced in partnership with Kingston Hive and Big Growth, supported by the Mayor of London through the UK Shared Prosperity Fund (UKSPF).</p>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Roehampton Sustainable Futures Hub. All rights reserved.</p>
+</footer>
+
+
+
+</body>
+</html>

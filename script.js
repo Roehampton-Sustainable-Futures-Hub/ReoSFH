@@ -272,3 +272,35 @@ document.querySelectorAll('.event-read-more').forEach(btn => {
     }
   });
 });
+
+// ============================================================
+// PUBLICATIONS PAGE — Filter buttons
+// ============================================================
+document.querySelectorAll('.pub-filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.pub-filter-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.pub-card').forEach(function(card) {
+      if (filter === 'all') {
+        card.style.display = '';
+      } else {
+        const tags = card.getAttribute('data-tags') || '';
+        card.style.display = tags.includes(filter) ? '' : 'none';
+      }
+    });
+  });
+});
+
+// ============================================================
+// PUBLICATIONS PAGE — Cite toggle
+// ============================================================
+function toggleCite(btn) {
+  const block = btn.closest('.pub-card').querySelector('.pub-cite-block');
+  const isOpen = block.style.display === 'block';
+  block.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen ? 'Cite this report' : 'Hide citation';
+}

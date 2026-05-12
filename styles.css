@@ -1798,3 +1798,21 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
   border-color: #4CCFA3;
   box-shadow: 0 0 0 1px rgba(76, 207, 163, 0.3);
 }
+
+
+/* ============================================================
+   PUBLICATIONS PAGE — Justified text
+   ============================================================ */
+.pub-abstract,
+.pub-source,
+.pub-findings ul {
+  text-align: justify;
+}
+
+/* ============================================================
+   EVENTS PAGE — Justified text
+   ============================================================ */
+.event-card p,
+.event-extra p {
+  text-align: justify;
+}
