@@ -255,3 +255,20 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('resize', update);
   update();
 })();
+
+
+// ============================================================
+// EVENTS PAGE — Expandable event descriptions
+// ============================================================
+document.querySelectorAll('.event-read-more').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const extra = btn.closest('.event-card').querySelector('.event-extra');
+    if (extra.style.display === 'none') {
+      extra.style.display = 'block';
+      btn.textContent = 'Show Less';
+    } else {
+      extra.style.display = 'none';
+      btn.textContent = 'Read More';
+    }
+  });
+});
