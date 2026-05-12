@@ -62,17 +62,17 @@ window.addEventListener("scroll", animateCounters);
 window.addEventListener("load", animateCounters);
 
 // Contact form (simple front-end feedback)
-const contactForm = document.querySelector(".contact-form");
-const formNote = document.getElementById("formNote");
+// const contactForm = document.querySelector(".contact-form");
+// const formNote = document.getElementById("formNote");
 
-if (contactForm && formNote) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    formNote.textContent = "Thank you for your enquiry. We’ll be in touch shortly.";
-    formNote.style.color = "#3ddc84";
-    contactForm.reset();
-  });
-}
+// if (contactForm && formNote) {
+//   contactForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     formNote.textContent = "Thank you for your enquiry. We’ll be in touch shortly.";
+//     formNote.style.color = "#3ddc84";
+//     contactForm.reset();
+//   });
+// }
 
 // Footer year
 const yearSpan = document.getElementById("year");
