@@ -1753,3 +1753,14 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
 }
 
 
+/* =======================================
+  SOCIALS ICON VISIBILITY ON CONTACT PAGE
+======================================== */
+.social-icon {
+  color: #4CCFA3;
+}
+
+.social-icon:hover {
+  color: #ECEBEA;
+  border-color: #4CCFA3;
+}
