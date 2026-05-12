@@ -304,3 +304,44 @@ function toggleCite(btn) {
   block.style.display = isOpen ? 'none' : 'block';
   btn.textContent = isOpen ? 'Cite this report' : 'Hide citation';
 }
+
+
+// ============================================================
+// CONTACT PAGE — EmailJS initialisation and form handler
+// ============================================================
+(function () {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: "Y8ZltrA1mcrySyiaF" });
+  }
+})();
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById("submitBtn");
+  const note = document.getElementById("formNote");
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+
+  const params = {
+    name:     document.getElementById("name").value,
+    email:    document.getElementById("email").value,
+    role:     document.getElementById("role").value,
+    interest: document.getElementById("interest").value,
+    message:  document.getElementById("message").value,
+  };
+
+  emailjs.send("service_gbyzkuc", "template_u78yj1i", params)
+    .then(function () {
+      note.textContent = "Thank you, your message has been sent. We will be in touch shortly.";
+      note.style.color = "#00A06E";
+      document.getElementById("contactForm").reset();
+      btn.textContent = "Send Message";
+      btn.disabled = false;
+    }, function () {
+      note.textContent = "Something went wrong. Please email us directly at sustainabilitycommunityproject@gmail.com";
+      note.style.color = "#f97373";
+      btn.textContent = "Send Message";
+      btn.disabled = false;
+    });
+}
