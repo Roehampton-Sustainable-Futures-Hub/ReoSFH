@@ -1816,3 +1816,16 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
 .event-extra p {
   text-align: justify;
 }
+
+/* ============================================================
+   PROJECTS PAGE — Fix text visibility in project cards
+   ============================================================ */
+.project-card p,
+.project-card ul,
+.project-card li {
+  color: #ECEBEA !important;
+}
+
+.project-card h3 {
+  color: #4CCFA3 !important;
+}
