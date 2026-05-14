@@ -26,7 +26,6 @@
       line-height: 1.7;
       margin: 0;
     }
-
     .pub-filters {
       display: flex;
       flex-wrap: wrap;
@@ -50,7 +49,6 @@
       border-color: var(--accent);
       color: #fff;
     }
-
     .pub-list {
       padding: 1.5rem 5vw 4rem;
       display: flex;
@@ -58,7 +56,6 @@
       gap: 1.5rem;
       max-width: 900px;
     }
-
     .pub-card {
       background: rgba(6, 53, 50, 0.95);
       border: 1px solid var(--border-subtle);
@@ -66,7 +63,6 @@
       padding: 1.75rem;
       position: relative;
     }
-
     .pub-meta-row {
       display: flex;
       flex-wrap: wrap;
@@ -82,16 +78,14 @@
       padding: 0.25rem 0.75rem;
       border-radius: 999px;
     }
-    .badge-report   { background: rgba(0,160,110,0.2); color: #4CCFA3; border: 1px solid rgba(0,160,110,0.4); }
+    .badge-report    { background: rgba(0,160,110,0.2);   color: #4CCFA3; border: 1px solid rgba(0,160,110,0.4); }
     .badge-fieldwork { background: rgba(76,207,163,0.15); color: #4CCFA3; border: 1px solid rgba(76,207,163,0.35); }
     .badge-community { background: rgba(255,200,80,0.15); color: #FACC60; border: 1px solid rgba(255,200,80,0.3); }
-
     .pub-year {
       font-size: 0.82rem;
       color: var(--text-muted);
       margin-left: auto;
     }
-
     .pub-card h2 {
       font-family: var(--font-heading);
       font-size: 1.1rem;
@@ -99,30 +93,26 @@
       margin: 0 0 0.4rem;
       line-height: 1.4;
     }
-
     .pub-authors {
       font-size: 0.85rem;
       color: #4CCFA3;
       margin: 0 0 0.75rem;
       font-style: italic;
     }
-
     .pub-source {
       font-size: 0.82rem;
       color: var(--text-muted);
       margin: 0 0 1rem;
+      text-align: justify;
     }
-    .pub-source strong {
-      color: #ECEBEA;
-    }
-
+    .pub-source strong { color: #ECEBEA; }
     .pub-abstract {
       font-size: 0.92rem;
       color: rgba(242, 238, 233, 0.88);
       line-height: 1.75;
       margin: 0 0 1rem;
+      text-align: justify;
     }
-
     .pub-keywords {
       display: flex;
       flex-wrap: wrap;
@@ -137,16 +127,12 @@
       border-radius: 999px;
       padding: 0.2rem 0.65rem;
     }
-
     .pub-divider {
       border: none;
       border-top: 1px solid rgba(255,255,255,0.08);
       margin: 0 0 1rem;
     }
-
-    .pub-findings {
-      margin: 0 0 1.25rem;
-    }
+    .pub-findings { margin: 0 0 1.25rem; }
     .pub-findings h4 {
       font-family: var(--font-heading);
       font-size: 0.85rem;
@@ -161,20 +147,16 @@
       color: rgba(242,238,233,0.88);
       font-size: 0.9rem;
       line-height: 1.75;
+      text-align: justify;
     }
-    .pub-findings ul li {
-      margin-bottom: 0.3rem;
-    }
-
+    .pub-findings ul li { margin-bottom: 0.3rem; }
     .pub-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
       align-items: center;
     }
-    .pub-actions a {
-      font-size: 0.85rem;
-    }
+    .pub-actions a { font-size: 0.85rem; }
     .pub-cite-toggle {
       background: none;
       border: 1px solid rgba(255,255,255,0.25);
@@ -186,10 +168,7 @@
       font-family: var(--font-main);
       transition: background 0.2s ease;
     }
-    .pub-cite-toggle:hover {
-      background: rgba(255,255,255,0.07);
-    }
-
+    .pub-cite-toggle:hover { background: rgba(255,255,255,0.07); }
     .pub-cite-block {
       display: none;
       margin-top: 1rem;
@@ -213,10 +192,9 @@
       margin-bottom: 0.4rem;
       display: block;
     }
-
     @media (max-width: 720px) {
-      .pub-list { padding-inline: 1.25rem; }
-      .pub-hero { padding-inline: 1.25rem; }
+      .pub-list    { padding-inline: 1.25rem; }
+      .pub-hero    { padding-inline: 1.25rem; }
       .pub-filters { padding-inline: 1.25rem; }
     }
   </style>
@@ -256,11 +234,73 @@
     <button class="pub-filter-btn" data-filter="industrial-estates">Industrial Estates</button>
     <button class="pub-filter-btn" data-filter="community-resilience">Community Resilience</button>
     <button class="pub-filter-btn" data-filter="kingston">Kingston</button>
+    <button class="pub-filter-btn" data-filter="research-impact">Research Impact</button>
   </div>
 
   <div class="pub-list">
 
-    <!-- PUBLICATION 1: Academic Collaboration Showcase -->
+    <!-- PUBLICATION 1: Research & Innovation Showcase -->
+    <article class="pub-card" data-tags="community-engagement sustainability research-impact">
+      <div class="pub-meta-row">
+        <span class="pub-badge badge-report">Field Report</span>
+        <span class="pub-badge badge-community">Research Impact</span>
+        <span class="pub-badge badge-fieldwork">Sustainability</span>
+        <span class="pub-year">May 2026</span>
+      </div>
+
+      <h2>Roehampton Sustainable Futures Hub at the Research &amp; Innovation Showcase 2026: Translating Community-Led Sustainability Research into Practical Action</h2>
+      <p class="pub-authors">Idugboe, E., Abboah-Offei, A., Kamble, R., Tiwari, A., Molina Murillas, G., Ofori-Mensah, K., Adele, T., Khan, M. A. R., Erdogan Onur, B., &amp; Demir, A.</p>
+      <p class="pub-source">
+        <strong>Presented at:</strong> Roehampton Research &amp; Innovation Showcase 2026, University of Roehampton, London, UK &nbsp;|&nbsp;
+        <strong>Date:</strong> 12 May 2026 &nbsp;|&nbsp;
+        <strong>Academic Lead:</strong> Associate Professor Ayse Demir &nbsp;|&nbsp;
+        <strong>Presented by:</strong> Eva Idugboe, Abena Abboah-Offei and the Roehampton Sustainable Futures Hub research team
+      </p>
+
+      <p class="pub-abstract">
+        This field report documents the Roehampton Sustainable Futures Hub's contribution to the Roehampton Research &amp; Innovation Showcase 2026, held at the University of Roehampton on 12 May 2026. The showcase brought together academics, students, staff, industry partners, community organisations, funders and external guests to explore research that addresses real-world social, environmental and community challenges. The Hub was presented as a university-led, community-powered and evidence-driven platform connecting academic research, student involvement, community engagement, SME support and public sector collaboration across three live partnership projects: the Air &amp; Living Infrastructure Initiative, Green Skills for South London, and Kingston Hive Impact &amp; Capacity Building.
+      </p>
+
+      <div class="pub-keywords">
+        <span class="pub-keyword">Research Impact</span>
+        <span class="pub-keyword">Sustainability</span>
+        <span class="pub-keyword">Community Engagement</span>
+        <span class="pub-keyword">Air Quality</span>
+        <span class="pub-keyword">Green Skills</span>
+        <span class="pub-keyword">Living Infrastructure</span>
+        <span class="pub-keyword">Kingston Hive</span>
+        <span class="pub-keyword">South London</span>
+        <span class="pub-keyword">Wandsworth</span>
+        <span class="pub-keyword">Evidence-Led Action</span>
+        <span class="pub-keyword">Community-Led Research</span>
+      </div>
+
+      <hr class="pub-divider">
+
+      <div class="pub-findings">
+        <h4>Key Findings</h4>
+        <ul>
+          <li>The showcase demonstrated the Hub's role in moving sustainability work beyond discussion and into real-world delivery, connecting research, policy, theory, community insight and implementation into a full pathway from evidence gathering to practical execution.</li>
+          <li>A central message from the research team was that meaningful sustainability solutions must begin with listening — the Hub's work is shaped by community needs, local business challenges, environmental evidence and direct engagement with partners.</li>
+          <li>Three live partnership projects were presented: the Air &amp; Living Infrastructure Initiative (with A Greener London), focusing on indoor and outdoor air quality monitoring across Roehampton, Putney and Wandsworth; Green Skills for South London (with The Community Brain CIC), supporting SMEs through green skills development, business engagement and waste-sharing; and Kingston Hive Impact &amp; Capacity Building (with Kingston Hive), strengthening community-led climate action through impact communication and evaluation.</li>
+          <li>Meaningful conversations were held with visitors including Chris Kelly, Dev Mehtab, Loanna Rossi and representatives connected to Wandsworth Council, creating opportunities to share current project outcomes and explore future collaboration.</li>
+          <li>The showcase reinforced that the Hub's wider partnership network — spanning the University of Roehampton, The Community Brain CIC, A Greener London, UKSPF, BIG South London, Kingston Hive, the Mayor of London and Wandsworth Council — is central to delivering place-based sustainability impact.</li>
+        </ul>
+      </div>
+
+      <div class="pub-actions">
+        <button class="pub-cite-toggle" onclick="toggleCite(this)">Cite this report</button>
+        <a href="events.html#academic-showcase" class="btn secondary" style="font-size:0.85rem;">View event</a>
+      </div>
+
+      <div class="pub-cite-block">
+        <span class="cite-label">APA 7th Edition</span>
+        <p>Idugboe, E., Abboah-Offei, A., Kamble, R., Tiwari, A., Molina Murillas, G., Ofori-Mensah, K., Adele, T., Khan, M. A. R., Erdogan Onur, B., &amp; Demir, A. (2026, May 12). <em>Roehampton Sustainable Futures Hub at the Research &amp; Innovation Showcase 2026: Translating community-led sustainability research into practical action.</em> Field report presented at the Roehampton Research &amp; Innovation Showcase 2026, University of Roehampton, London, United Kingdom. Roehampton Sustainable Futures Hub.</p>
+      </div>
+    </article>
+
+
+    <!-- PUBLICATION 2: Academic Collaboration Showcase -->
     <article class="pub-card" data-tags="community-engagement green-skills sustainability">
       <div class="pub-meta-row">
         <span class="pub-badge badge-report">Field Report</span>
@@ -318,7 +358,7 @@
     </article>
 
 
-    <!-- PUBLICATION 2: Community Forum -->
+    <!-- PUBLICATION 3: Community Forum -->
     <article class="pub-card" data-tags="community-engagement green-skills sustainability industrial-estates">
       <div class="pub-meta-row">
         <span class="pub-badge badge-report">Field Report</span>
@@ -379,7 +419,7 @@
     </article>
 
 
-    <!-- PUBLICATION 3: Kingston Hive Implementation Framework -->
+    <!-- PUBLICATION 4: Kingston Hive Implementation Framework -->
     <article class="pub-card" data-tags="community-engagement sustainability community-resilience kingston">
       <div class="pub-meta-row">
         <span class="pub-badge badge-report">Implementation Framework</span>
@@ -472,8 +512,6 @@
 <footer class="site-footer">
   <p>© <span id="year"></span> Roehampton Sustainable Futures Hub. All rights reserved.</p>
 </footer>
-
-
 
 </body>
 </html>
