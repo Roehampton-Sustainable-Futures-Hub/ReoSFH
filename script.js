@@ -219,6 +219,48 @@ document.addEventListener("DOMContentLoaded", () => {
 // EVENTS CAROUSEL — replace old carousel block in script.js
 // ============================================================
 
+// (function () {
+//   const track = document.getElementById('carouselTrack');
+//   if (!track) return;
+
+//   const slides = track.querySelectorAll('.carousel-slide');
+//   let current = 0;
+
+//   function perView() {
+//     return window.innerWidth >= 721 ? 3 : 1;
+//   }
+
+//   function update() {
+//     const pv = perView();
+//     const max = slides.length - pv;
+//     if (current > max) current = max;
+//     if (current < 0) current = 0;
+//     track.style.transform = 'translateX(-' + (current * (100 / pv)) + '%)';
+//   }
+
+//   document.getElementById('carouselNext')?.addEventListener('click', function () {
+//     const pv = perView();
+//     const max = slides.length - pv;
+//     current = current >= max ? 0 : current + pv;
+//     update();
+//   });
+
+//   document.getElementById('carouselPrev')?.addEventListener('click', function () {
+//     const pv = perView();
+//     const max = slides.length - pv;
+//     current = current <= 0 ? max : current - pv;
+//     update();
+//   });
+
+//   window.addEventListener('resize', update);
+//   update();
+// })();
+
+
+
+// ============================================================
+// EVENTS CAROUSEL
+// ============================================================
 (function () {
   const track = document.getElementById('carouselTrack');
   if (!track) return;
@@ -232,23 +274,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function update() {
     const pv = perView();
-    const max = slides.length - pv;
+    const max = Math.max(0, slides.length - pv);
     if (current > max) current = max;
     if (current < 0) current = 0;
-    track.style.transform = 'translateX(-' + (current * (100 / pv)) + '%)';
+    const pct = (100 / pv) * current;
+    track.style.transform = 'translateX(-' + pct + '%)';
   }
 
   document.getElementById('carouselNext')?.addEventListener('click', function () {
     const pv = perView();
-    const max = slides.length - pv;
-    current = current >= max ? 0 : current + pv;
+    const max = Math.max(0, slides.length - pv);
+    current = current >= max ? 0 : current + 1;
     update();
   });
 
   document.getElementById('carouselPrev')?.addEventListener('click', function () {
     const pv = perView();
-    const max = slides.length - pv;
-    current = current <= 0 ? max : current - pv;
+    const max = Math.max(0, slides.length - pv);
+    current = current <= 0 ? max : current - 1;
     update();
   });
 
@@ -345,3 +388,84 @@ function sendEmail(e) {
       btn.disabled = false;
     });
 }
+
+
+// ============================================================
+// GALLERY PAGE — Filter buttons & Lightbox
+// ============================================================
+(function () {
+  const filterBtns   = document.querySelectorAll('.gallery-filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+      galleryItems.forEach(function (item) {
+        item.style.display =
+          filter === 'all' || item.getAttribute('data-tags') === filter ? '' : 'none';
+      });
+    });
+  });
+
+  const lightbox      = document.getElementById('lightbox');
+  const lightboxImg   = document.getElementById('lightboxImg');
+  const lightboxCap   = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev  = document.getElementById('lightboxPrev');
+  const lightboxNext  = document.getElementById('lightboxNext');
+  if (!lightbox) return;
+
+  let currentIndex = 0;
+
+  function getVisibleItems() {
+    return Array.from(galleryItems).filter(function (item) {
+      return item.style.display !== 'none';
+    });
+  }
+
+  function openLightbox(index) {
+    const visible = getVisibleItems();
+    if (!visible[index]) return;
+    currentIndex = index;
+    lightboxImg.src = visible[index].querySelector('img').src;
+    lightboxImg.alt = visible[index].querySelector('img').alt;
+    lightboxCap.textContent = visible[index].querySelector('.gallery-caption').textContent;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  galleryItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      openLightbox(getVisibleItems().indexOf(item));
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  lightboxNext.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const visible = getVisibleItems();
+    openLightbox((currentIndex + 1) % visible.length);
+  });
+  lightboxPrev.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const visible = getVisibleItems();
+    openLightbox((currentIndex - 1 + visible.length) % visible.length);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowRight') lightboxNext.click();
+    if (e.key === 'ArrowLeft')  lightboxPrev.click();
+  });
+})();
