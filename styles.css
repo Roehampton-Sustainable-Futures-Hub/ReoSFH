@@ -1992,4 +1992,12 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
   .gallery-filters { padding-inline: 1.25rem; }
 }
 
-
+/* ==============================================
+JUSTIFYING THE "ACCORDION" TEXT IN THE HOME PAGE
+===============================================*/
+.home-tab-panel p,
+.home-tab-panel li,
+.accordion-content p,
+.accordion-content li {
+  text-align: justify;
+}
