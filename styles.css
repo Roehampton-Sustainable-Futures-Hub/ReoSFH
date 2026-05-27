@@ -1494,7 +1494,7 @@ textarea {
 }
 
 .hero-content p {
-  text-align: justify;
+  /* text-align: justify; */
   max-width: 100%;
 }
 
@@ -1999,5 +1999,64 @@ JUSTIFYING THE "ACCORDION" TEXT IN THE HOME PAGE
 .home-tab-panel li,
 .accordion-content p,
 .accordion-content li {
-  text-align: justify;
+  /* text-align: justify; */
+}
+
+/* =============================
+        SEARCH BUTTON STYLING
+================================*/
+.site-search { display: flex; align-items: center; position: relative; }
+.search-toggle { background: none; border: none; color: #F2EEE9; cursor: pointer; padding: 0.25rem; display: flex; align-items: center; transition: color 0.2s ease; }
+.search-toggle:hover { color: #4CCFA3; }
+.search-bar { display: none; position: absolute; top: 2.5rem; right: 0; background: #063532; border: 1px solid #0F5A54; border-radius: 0.75rem; padding: 0.5rem; z-index: 200; width: 280px; }
+.search-bar.open { display: block; }
+.search-bar form { display: flex; gap: 0.4rem; }
+.search-input { flex: 1; background: #0d2b28; border: 1px solid #0F5A54; border-radius: 0.5rem; color: #ECEBEA; padding: 0.45rem 0.7rem; font-size: 0.85rem; font-family: inherit; }
+.search-input::placeholder { color: rgba(236,235,234,0.5); }
+.search-input:focus { outline: none; border-color: #4CCFA3; }
+.search-submit { background: #00A06E; border: none; border-radius: 0.5rem; color: #fff; padding: 0.45rem 0.75rem; font-size: 0.85rem; cursor: pointer; transition: background 0.2s ease; }
+.search-submit:hover { background: #007A55; }
+@media (max-width: 720px) { .search-bar { right: -3rem; width: 240px; } }
+
+
+/* =================================================
+   PROJECTS PAGE — Read More expanded content
+   ================================================ */
+
+.project-extra-content {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.project-extra-content p,
+.project-extra-content li {
+  color: #ECEBEA !important;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.project-extra-content ul {
+  padding-left: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.project-extra-content strong {
+  color: #4CCFA3 !important;
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.project-read-more {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.project-linkedin {
+  margin-top: 0.75rem;
+  width: 100%;
+  text-align: center;
+  display: block;
 }

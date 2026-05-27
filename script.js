@@ -469,3 +469,40 @@ function sendEmail(e) {
     if (e.key === 'ArrowLeft')  lightboxPrev.click();
   });
 })();
+
+
+// =====================
+//      SEARCH BUTTON
+// =====================
+const searchToggle = document.getElementById('searchToggle');
+const searchBar = document.getElementById('searchBar');
+const searchInput = document.getElementById('searchInput');
+if (searchToggle && searchBar) {
+  searchToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    searchBar.classList.toggle('open');
+    if (searchBar.classList.contains('open')) searchInput.focus();
+  });
+  document.addEventListener('click', function(e) {
+    if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+      searchBar.classList.remove('open');
+    }
+  });
+}
+
+
+// ============================================================
+// PROJECTS PAGE — Read More / Show Less toggle
+// ============================================================
+document.querySelectorAll('.project-read-more').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var extra = btn.closest('.project-card').querySelector('.project-extra-content');
+    if (extra.style.display === 'block') {
+      extra.style.display = 'none';
+      btn.textContent = 'Read More';
+    } else {
+      extra.style.display = 'block';
+      btn.textContent = 'Show Less';
+    }
+  });
+});

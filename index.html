@@ -26,6 +26,24 @@
     <a href="publications.html">Publications</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+  <!-- Search -->
+  <div class="site-search">
+    <button class="search-toggle" id="searchToggle" aria-label="Search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <div class="search-bar" id="searchBar">
+      <form action="https://www.google.com/search" method="GET" target="_blank">
+        <input type="hidden" name="sitesearch" value="roehamptonsustainablefutureshub.co.uk">
+        <input type="text" name="q" placeholder="Search the site..." class="search-input" id="searchInput">
+        <button type="submit" class="search-submit">Go</button>
+      </form>
+    </div>
+  </div>
+
   <button class="nav-toggle" id="navToggle">☰</button>
 </header>
 
@@ -110,7 +128,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; -40,30; 0,0" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Kingston Hive -->
           <g>
             <a href="https://www.kingstonhive.org.uk/" target="_blank">
@@ -119,7 +136,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; 40,-30; 0,0" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- A Greener London -->
           <g>
             <a href="https://www.agreenerLondon.org.uk" target="_blank">
@@ -128,7 +144,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; -30,40; 0,0" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Community Brain -->
           <g>
             <a href="https://www.thecommunitybrain.org" target="_blank">
@@ -137,7 +152,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; 30,-35; 0,0" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Mayor of London -->
           <g>
             <a href="https://www.london.gov.uk" target="_blank">
@@ -146,7 +160,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; -30,-30; 0,0" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Big Growth -->
           <g>
             <a href="https://big-knowledge.co.uk/" target="_blank">
@@ -155,7 +168,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; 30,-30; 0,0" dur="2.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- University of Roehampton -->
           <g>
             <a href="https://www.roehampton.ac.uk" target="_blank">
@@ -164,7 +176,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; 0,35; 0,0" dur="3.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Kingston Council -->
           <g>
             <a href="https://www.kingston.gov.uk" target="_blank">
@@ -173,7 +184,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; -35,0; 0,0" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Wandsworth Council -->
           <g>
             <a href="https://www.wandsworth.gov.uk" target="_blank">
@@ -182,7 +192,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; -35,35; 0,0" dur="3.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Hammersmith & Fulham -->
           <g>
             <a href="https://www.lbhf.gov.uk" target="_blank">
@@ -191,7 +200,6 @@
             </a>
             <animateTransform attributeName="transform" type="translate" values="0,0; 35,35; 0,0" dur="2.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" keyTimes="0;0.5;1"/>
           </g>
-
           <!-- Sustainable Merton -->
           <g>
             <a href="https://www.sustainablemerton.org" target="_blank">
@@ -229,12 +237,13 @@
         </button>
         <button class="home-tab-btn" data-tab="tab-greenskills">
           <span class="htb-label">Green Skills</span>
-          <span class="htb-sub">Employability Project</span>
+          <span class="htb-sub">South London</span>
         </button>
       </div>
 
       <div class="home-tab-panels">
 
+        <!-- MERTON TAB -->
         <div class="home-tab-panel active" id="tab-merton">
           <h3>Empowering Change: Understanding and Optimising Volunteer Engagement for Sustainable Impact in Merton</h3>
           <p>The first pilot initiative (2024–2025) delivered by the Roehampton Sustainable Futures Hub, led by Dr. Ayse Demir in partnership with Sustainable Merton and funded through BIG South London (UK Shared Prosperity Fund). The project explored how research-led approaches can strengthen volunteer engagement and long-term community sustainability impact.</p>
@@ -252,121 +261,50 @@
           <p>As our inaugural pilot, this project now forms the foundation for the Hub's expanded 2025–2026 and beyond sustainability programme. <a href="https://lnkd.in/g4i8BNDd" target="_blank" style="color:#4CCFA3;">Learn more →</a></p>
         </div>
 
+        <!-- ALII TAB -->
         <div class="home-tab-panel" id="tab-alii">
           <h3>Air &amp; Living Infrastructure Initiative (ALII)</h3>
-          <p>The Air &amp; Living Infrastructure Initiative (ALII) is one of the Roehampton Sustainable Futures Hub's 
-            flagship research and delivery projects. Focused on the critical challenge of urban air quality, ALII
-             brings together world-class academic expertise and specialist environmental practice to develop 
-             evidence-based solutions that make London's communities healthier, greener and more resilient.
-          </p>
-          <p>Led by Professor Ayse Demir and her multidisciplinary research team, the project in 
-            strategic partnership with A Greener London, represents exactly the kind of collaborative, 
-            impact-driven research the Hub was built to enable. Funded through the UK Shared Prosperity Fund 
-            via BIG Growth, the initiative translates environmental data into actionable strategies that 
-            communities, councils and planners can act on today.
-          </p>
-
+          <p>The Air &amp; Living Infrastructure Initiative (ALII) is one of the Roehampton Sustainable Futures Hub's flagship research and delivery projects. Focused on the critical challenge of urban air quality, ALII brings together world-class academic expertise and specialist environmental practice to develop evidence-based solutions that make London's communities healthier, greener and more resilient.</p>
+          <p>Led by Professor Ayse Demir and her multidisciplinary research team, the project in strategic partnership with A Greener London, represents exactly the kind of collaborative, impact-driven research the Hub was built to enable. Funded through the UK Shared Prosperity Fund via BIG Growth, the initiative translates environmental data into actionable strategies that communities, councils and planners can act on today.</p>
           <p><strong>The Challenge</strong></p>
-          <p>Air pollution remains one of the most significant environmental health risks facing urban populations
-             across London. From traffic emissions and industrial activity to inadequate green coverage in 
-             built-up areas, the air quality challenges facing London's communities are complex, localised 
-             and deeply interconnected with wider issues of health inequality, urban planning and climate 
-             resilience. ALII was designed to meet this challenge head-on — with rigour, collaboration and a 
-             genuine commitment to community benefit.
-          </p>
-
+          <p>Air pollution remains one of the most significant environmental health risks facing urban populations across London. From traffic emissions and industrial activity to inadequate green coverage in built-up areas, the air quality challenges facing London's communities are complex, localised and deeply interconnected with wider issues of health inequality, urban planning and climate resilience. ALII was designed to meet this challenge head-on — with rigour, collaboration and a genuine commitment to community benefit.</p>
           <p><strong>The Approach</strong></p>
-          <p>ALII combines real-time air quality monitoring with applied research into the role of living 
-            infrastructure; green walls, street trees, living roofs and other nature-based interventions,
-            in mitigating urban pollution. By collecting reliable, localised environmental data and 
-            analysing it through an academic lens, the initiative generates findings that are not only 
-            scientifically robust but practically useful. Every insight is designed to inform decisions, 
-            shape strategies and drive improvements in the environments where people live and work.
-          </p>
-
+          <p>ALII combines real-time air quality monitoring with applied research into the role of living infrastructure; green walls, street trees, living roofs and other nature-based interventions, in mitigating urban pollution. By collecting reliable, localised environmental data and analysing it through an academic lens, the initiative generates findings that are not only scientifically robust but practically useful. Every insight is designed to inform decisions, shape strategies and drive improvements in the environments where people live and work.</p>
           <p><strong>The Partnership</strong></p>
-          <p>The strength of ALII lies in the depth of its partnership. The University of Roehampton leads
-             the research component, ensuring methodological rigour, data integrity and academic quality. 
-             The initiative also provides a rich environment for student engagement and environmental 
-             innovation, connecting learning directly to real-world impact. A Greener London contributes 
-             specialist expertise in air quality monitoring systems, green infrastructure implementation
-              and stakeholder engagement; translating research into practical, scalable solutions that 
-              can be adopted across London boroughs and beyond. Together, this partnership bridges the 
-              gap between research and practice, delivering measurable insights that neither partner 
-              could achieve alone.
-            </p>
-
+          <p>The strength of ALII lies in the depth of its partnership. The University of Roehampton leads the research component, ensuring methodological rigour, data integrity and academic quality. The initiative also provides a rich environment for student engagement and environmental innovation, connecting learning directly to real-world impact. A Greener London contributes specialist expertise in air quality monitoring systems, green infrastructure implementation and stakeholder engagement; translating research into practical, scalable solutions that can be adopted across London boroughs and beyond. Together, this partnership bridges the gap between research and practice, delivering measurable insights that neither partner could achieve alone.</p>
           <p><strong>The Impact</strong></p>
-          <p>ALII is already generating tangible outcomes; from monitoring data that sheds new light on 
-            localised pollution patterns, to green infrastructure pilots that demonstrate what is possible
-             when cities invest in nature-based solutions. The initiative contributes directly to London's 
-             broader sustainability and net zero ambitions, offering a replicable model for evidence-led 
-             environmental action that other cities and regions can learn from and build upon.
-            </p>
-
-          <p>This is what purposeful partnership looks like. When academia and industry align around a 
-            shared purpose; improving air quality, strengthening sustainable infrastructure and building 
-            healthier communities - the results speak for themselves.</p>
+          <p>ALII is already generating tangible outcomes; from monitoring data that sheds new light on localised pollution patterns, to green infrastructure pilots that demonstrate what is possible when cities invest in nature-based solutions. The initiative contributes directly to London's broader sustainability and net zero ambitions, offering a replicable model for evidence-led environmental action that other cities and regions can learn from and build upon.</p>
+          <p>This is what purposeful partnership looks like. When academia and industry align around a shared purpose; improving air quality, strengthening sustainable infrastructure and building healthier communities - the results speak for themselves.</p>
         </div>
 
+        <!-- KINGSTON HIVE TAB -->
         <div class="home-tab-panel" id="tab-kingston">
-              <h3>Kingston Hive – Impact, Learning &amp; Capacity Building Project</h3>
-              <p>The Kingston Hive Impact, Learning &amp; Capacity Building Project is one of the Roehampton 
-                Sustainable Futures Hub's active collaborative partnerships, focused on embedding practical, 
-                proportionate approaches to evaluation, shared learning and organisational development within
-                 a thriving, volunteer-led community space. Delivered under the UK Shared Prosperity Fund 
-                 (UKSPF) / BIG Growth framework and led by Professor Ayse Demir, this project represents exactly
-                  how the Hub believes change should happen: community-led, evidence-informed and proportionate 
-                  by design.
-                </p>
+          <h3>Kingston Hive – Impact, Learning &amp; Capacity Building Project</h3>
+          <p>The Kingston Hive Impact, Learning &amp; Capacity Building Project is one of the Roehampton Sustainable Futures Hub's active collaborative partnerships, focused on embedding practical, proportionate approaches to evaluation, shared learning and organisational development within a thriving, volunteer-led community space. Delivered under the UK Shared Prosperity Fund (UKSPF) / BIG Growth framework and led by Professor Ayse Demir, this project represents exactly how the Hub believes change should happen: community-led, evidence-informed and proportionate by design.</p>
+          <p>The partnership works alongside Kingston Hive to strengthen how community impact is reflected, evidenced and communicated; not through top-down assessment, but through co-designed approaches that respect the values, pace and capacity of a volunteer-driven organisation.</p>
+          <p><strong>The Challenge</strong></p>
+          <p>Volunteer-led community organisations like Kingston Hive deliver extraordinary value, through repair cafés, sustainability education, workshops and local action, yet often struggle to capture and communicate that value in ways that satisfy funders without placing unsustainable administrative burdens on the very people doing the work. The Kingston Hive project was designed to solve exactly that tension: building robust, funder-ready evidence while preserving the flexibility and responsiveness that makes community-led spaces effective.</p>
+          <p><strong>The Approach</strong></p>
+          <p>Through a combination of field observation, impact and evaluation design, and shared learning processes, the partnership generates insight in real time rather than through retrospective assessment. This enables continuous reflection and adaptation as activities evolve; strengthening internal understanding of what works and why. The co-designed evaluation framework is intentionally proportionate, avoiding administrative burden while generating clear, credible evidence that supports both internal learning and external reporting.</p>
+          <p><strong>The Partnership</strong></p>
+          <p>The University of Roehampton contributes academic direction, evaluation design expertise and two-way knowledge exchange; bringing rigour and structure to the partnership while remaining responsive to Kingston Hive's community-led priorities. Kingston Hive brings its deep knowledge of local need, volunteer capacity and community context, ensuring that every approach developed is grounded in the reality of how the organisation actually works. Together, the partnership supports UKSPF priorities across collaborative organisational development, knowledge exchange, improved clarity in evaluation and reporting, and strengthened internal monitoring practices.</p>
+          <p><strong>The Impact</strong></p>
+          <p>As a result of this partnership, Kingston Hive's capacity to clearly articulate the value and outcomes of its community-led work is being strengthened in a way that is proportionate, flexible and well suited to a volunteer-led model. The project enhances confidence and consistency in evaluation, improves funder-ready reporting, and supports the kind of continuous internal learning that helps community organisations grow sustainably; on their own terms.</p>
+          <p>Community-led. Evidence-informed. Proportionate by design.</p>
+        </div>
 
-              <p>The partnership works alongside Kingston Hive to strengthen how community impact is reflected, 
-                evidenced and communicated; not through top-down assessment, but through co-designed approaches 
-                that respect the values, pace and capacity of a volunteer-driven organisation.
-              </p>
-
-              <p><strong>The Challenge</strong></p>
-              <p>Volunteer-led community organisations like Kingston Hive deliver extraordinary value, 
-                through repair cafés, sustainability education, workshops and local action, yet often struggle 
-                to capture and communicate that value in ways that satisfy funders without placing unsustainable
-                 administrative burdens on the very people doing the work. The Kingston Hive project was designed 
-                 to solve exactly that tension: building robust, funder-ready evidence while preserving the 
-                 flexibility and responsiveness that makes community-led spaces effective.
-              </p>
-
-              <p><strong>The Approach</strong></p>
-              <p>Through a combination of field observation, impact and evaluation design, and shared learning 
-                processes, the partnership generates insight in real time rather than through retrospective 
-                assessment. This enables continuous reflection and adaptation as activities evolve;
-                strengthening internal understanding of what works and why. The co-designed evaluation framework 
-                is intentionally proportionate, avoiding administrative burden while generating clear, credible
-                 evidence that supports both internal learning and external reporting.
-              </p>
-
-              <p><strong>The Partnership</strong></p>
-              <p>The University of Roehampton contributes academic direction, evaluation design expertise and
-                 two-way knowledge exchange; bringing rigour and structure to the partnership while remaining 
-                 responsive to Kingston Hive's community-led priorities. Kingston Hive brings its deep knowledge
-                  of local need, volunteer capacity and community context, ensuring that every approach developed
-                   is grounded in the reality of how the organisation actually works. Together, the partnership 
-                   supports UKSPF priorities across collaborative organisational development, knowledge exchange,
-                    improved clarity in evaluation and reporting, and strengthened internal monitoring practices.
-                </p>
-
-              <p><strong>The Impact</strong></p>
-              <p>As a result of this partnership, Kingston Hive's capacity to clearly articulate the value and 
-                outcomes of its community-led work is being strengthened in a way that is proportionate, 
-                flexible and well suited to a volunteer-led model. The project enhances confidence and consistency
-                 in evaluation, improves funder-ready reporting, and supports the kind of continuous internal 
-                 learning that helps community organisations grow sustainably; on their own terms.
-              </p>
-
-              <p>Community-led. Evidence-informed. Proportionate by design.</p>
-            </div>
-
+        <!-- GREEN SKILLS TAB -->
         <div class="home-tab-panel" id="tab-greenskills">
           <h3>Green Skills &amp; Employability Project</h3>
-          <p>Our Green Skills projects provide pathways into the growing green economy — from retrofit and energy efficiency to digital and data for net zero. Designed with employers and aligned with London's climate goals.</p>
+          <p>Green Skills for South London is a knowledge exchange and community and business development initiative at the University of Roehampton. Funded by the Mayor of London through the UK Shared Prosperity Fund (UKSPF), the project is led by Professor Ayse Demir in partnership with Community Brain. It builds practical green skills within South London SMEs, university students and communities through hands-on training, applied learning, and a train-the-trainer model.</p>
+          <p><strong>The Challenge</strong></p>
+          <p>South London's SMEs and communities are navigating the transition to a green economy without always having access to the practical tools, knowledge or networks they need. Sustainability can feel abstract, costly or irrelevant to day-to-day business operations. This project was designed to change that — making green skills accessible, actionable and directly relevant to real businesses and real communities.</p>
+          <p><strong>The Approach</strong></p>
+          <p>Through a train-the-trainer model, businesses act as both beneficiaries and multipliers — gaining skills themselves while building capacity to spread knowledge further. Delivery includes training materials, workshops, applied learning activities and a hackathon-style collective workshop, bringing together SMEs and university students to focus on collaboration and the practical application of green skills. Key focus areas include supporting SMEs to improve sustainability practices using action-oriented, business-relevant tools and language.</p>
+          <p><strong>The Partnership</strong></p>
+          <p>The project is led by Professor Ayse Demir at the University of Roehampton, whose academic team oversees project direction, learning design and delivery. Roehampton students contribute through applied learning activities, collaboration with SMEs, and participation in workshops and training sessions — gaining practical experience alongside academic learning. Community Brain is a key project partner, bringing deep place-based knowledge and long-standing relationships with local businesses and industrial communities, particularly within Chessington Industrial Estate. Their trust-first, community-led engagement model ensures project activity remains grounded, practical and business-led.</p>
+          <p><strong>The Impact</strong></p>
+          <p>The project contributes to UKSPF priorities including non-financial SME support (OP11), knowledge transfer (OC10), improved organisational productivity (OC12) and adoption of improved internal processes (OC13). By connecting academic expertise, community trust and business relevance, Green Skills for South London is helping to build a greener, more resilient local economy — one business and one community at a time.</p>
         </div>
 
       </div>
@@ -378,20 +316,9 @@
       <div class="accordion-item">
         <button class="accordion-header">Empowering Change: Understanding and Optimising Volunteer Engagement for Sustainable Impact in Merton</button>
         <div class="accordion-content">
-          <p>The first pilot initiative (2024–2025) delivered by the Roehampton Sustainable Futures Hub, led 
-            by Dr. Ayse Demir in partnership with Sustainable Merton and funded through BIG South London 
-            (UK Shared Prosperity Fund).
-          </p>
-
-          <p>From urban gardening and zero-waste food distribution to community outreach and intergenerational
-             collaboration, Roehampton students Eva Idugboe, Jesutowo Fola-Alao, Uforo Sundasen and Aderonke Salau
-              played a central role in supporting local climate action across Merton.
-          </p>
-
-          <p>As student volunteer Eva Idugboe reflected: <em>"I wanted to contribute to sustainability and get 
-            hands-on experience; it's inspiring how small efforts can make a big difference."</em>
-          </p>
-
+          <p>The first pilot initiative (2024–2025) delivered by the Roehampton Sustainable Futures Hub, led by Dr. Ayse Demir in partnership with Sustainable Merton and funded through BIG South London (UK Shared Prosperity Fund).</p>
+          <p>From urban gardening and zero-waste food distribution to community outreach and intergenerational collaboration, Roehampton students Eva Idugboe, Jesutowo Fola-Alao, Uforo Sundasen and Aderonke Salau played a central role in supporting local climate action across Merton.</p>
+          <p>As student volunteer Eva Idugboe reflected: <em>"I wanted to contribute to sustainability and get hands-on experience; it's inspiring how small efforts can make a big difference."</em></p>
           <p><strong>What the project delivered:</strong></p>
           <ul>
             <li>Urban gardening, zero-waste food distribution and community outreach across Merton.</li>
@@ -409,106 +336,50 @@
       <div class="accordion-item">
         <button class="accordion-header">ALII – Air &amp; Living Infrastructure Initiative</button>
         <div class="accordion-content">
-          <p>The Air &amp; Living Infrastructure Initiative (ALII) is one of the Roehampton Sustainable 
-            Futures Hub's flagship research and delivery projects. Focused on the critical challenge of 
-            urban air quality, ALII brings together world-class academic expertise and specialist environmental
-             practice to develop evidence-based solutions that make London's communities healthier, greener and
-              more resilient.
-          </p>
-          <p>Led by Professor Ayse Demir and her multidisciplinary research team, and delivered in strategic 
-            partnership with A Greener London, ALII represents exactly the kind of collaborative, impact-driven
-             research the Hub was built to enable. Funded through the UK Shared Prosperity Fund via BIG Growth, 
-             the initiative translates environmental data into actionable strategies that communities, councils 
-             and planners can act on today.
-          </p>
-
+          <p>The Air &amp; Living Infrastructure Initiative (ALII) is one of the Roehampton Sustainable Futures Hub's flagship research and delivery projects. Focused on the critical challenge of urban air quality, ALII brings together world-class academic expertise and specialist environmental practice to develop evidence-based solutions that make London's communities healthier, greener and more resilient.</p>
+          <p>Led by Professor Ayse Demir and her multidisciplinary research team, and delivered in strategic partnership with A Greener London, ALII represents exactly the kind of collaborative, impact-driven research the Hub was built to enable. Funded through the UK Shared Prosperity Fund via BIG Growth, the initiative translates environmental data into actionable strategies that communities, councils and planners can act on today.</p>
           <p><strong>The Challenge</strong></p>
-          <p>Air pollution remains one of the most significant environmental health risks facing urban populations
-             across London. From traffic emissions and industrial activity to inadequate green coverage in 
-             built-up areas, the air quality challenges facing London's communities are complex, localised and
-              deeply interconnected with wider issues of health inequality, urban planning and climate resilience. 
-              ALII was designed to meet this challenge head-on; with rigour, collaboration and a genuine commitment 
-              to community benefit.
-          </p>
-
+          <p>Air pollution remains one of the most significant environmental health risks facing urban populations across London. From traffic emissions and industrial activity to inadequate green coverage in built-up areas, the air quality challenges facing London's communities are complex, localised and deeply interconnected with wider issues of health inequality, urban planning and climate resilience. ALII was designed to meet this challenge head-on; with rigour, collaboration and a genuine commitment to community benefit.</p>
           <p><strong>The Approach</strong></p>
-          <p>ALII combines real-time air quality monitoring with applied research into the role of living 
-            infrastructure; green walls, street trees, living roofs and other nature-based interventions, in 
-            mitigating urban pollution. By collecting reliable, localised environmental data and analysing it 
-            through an academic lens, the initiative generates findings that are not only scientifically robust 
-            but practically useful. Every insight is designed to inform decisions, shape strategies and drive 
-            improvements in the environments where people live and work.
-          </p>
-
+          <p>ALII combines real-time air quality monitoring with applied research into the role of living infrastructure; green walls, street trees, living roofs and other nature-based interventions, in mitigating urban pollution. By collecting reliable, localised environmental data and analysing it through an academic lens, the initiative generates findings that are not only scientifically robust but practically useful. Every insight is designed to inform decisions, shape strategies and drive improvements in the environments where people live and work.</p>
           <p><strong>The Partnership</strong></p>
-          <p>The strength of ALII lies in the depth of its partnership. The University of Roehampton leads the
-             research component, ensuring methodological rigour, data integrity and academic quality. The 
-             initiative also provides a rich environment for student engagement and environmental innovation, 
-             connecting learning directly to real-world impact. A Greener London contributes specialist expertise
-              in air quality monitoring systems, green infrastructure implementation and stakeholder engagement; 
-              translating research into practical, scalable solutions that can be adopted across London boroughs
-               and beyond. Together, this partnership bridges the gap between research and practice, delivering 
-               measurable insights that neither partner could achieve alone.
-            </p>
-
+          <p>The strength of ALII lies in the depth of its partnership. The University of Roehampton leads the research component, ensuring methodological rigour, data integrity and academic quality. A Greener London contributes specialist expertise in air quality monitoring systems, green infrastructure implementation and stakeholder engagement; translating research into practical, scalable solutions that can be adopted across London boroughs and beyond. Together, this partnership bridges the gap between research and practice, delivering measurable insights that neither partner could achieve alone.</p>
           <p><strong>The Impact</strong></p>
-          <p>ALII is already generating tangible outcomes; from monitoring data that sheds new light on localised
-             pollution patterns, to green infrastructure pilots that demonstrate what is possible when cities 
-             invest in nature-based solutions. The initiative contributes directly to London's broader sustainability
-              and net zero ambitions, offering a replicable model for evidence-led environmental action that other 
-              cities and regions can learn from and build upon.
-          </p>
-          <p>This is what purposeful partnership looks like. When academia and industry align around a shared 
-            purpose; improving air quality, strengthening sustainable infrastructure and building healthier 
-            communities - the results speak for themselves.</p>
+          <p>ALII is already generating tangible outcomes; from monitoring data that sheds new light on localised pollution patterns, to green infrastructure pilots that demonstrate what is possible when cities invest in nature-based solutions. The initiative contributes directly to London's broader sustainability and net zero ambitions, offering a replicable model for evidence-led environmental action that other cities and regions can learn from and build upon.</p>
+          <p>This is what purposeful partnership looks like. When academia and industry align around a shared purpose, the results speak for themselves.</p>
         </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header">Kingston Hive – Impact, Learning &amp; Capacity Project</button>
         <div class="accordion-content">
-          <p>The Kingston Hive Impact, Learning &amp; Capacity Building Project is an ongoing collaborative 
-            partnership between the University of Roehampton and Kingston Hive, led by Professor Ayse Demir 
-            under the UK Shared Prosperity Fund (UKSPF) / BIG Growth framework.
-          </p>
-
-          <p>The project works alongside Kingston Hive to strengthen how community impact is reflected, evidenced
-             and communicated, through co-designed, proportionate approaches that respect the values and capacity
-              of a volunteer-led organisation.</p>
-
+          <p>The Kingston Hive Impact, Learning &amp; Capacity Building Project is an ongoing collaborative partnership between the University of Roehampton and Kingston Hive, led by Professor Ayse Demir under the UK Shared Prosperity Fund (UKSPF) / BIG Growth framework.</p>
+          <p>The project works alongside Kingston Hive to strengthen how community impact is reflected, evidenced and communicated, through co-designed, proportionate approaches that respect the values and capacity of a volunteer-led organisation.</p>
           <p><strong>The Challenge</strong></p>
-          <p>Volunteer-led organisations like Kingston Hive deliver extraordinary value but often struggle to 
-            capture and communicate it without placing unsustainable burdens on their teams. This project was 
-            designed to solve exactly that, building funder-ready evidence while preserving the flexibility 
-            that makes community-led spaces effective.
-          </p>
-
+          <p>Volunteer-led organisations like Kingston Hive deliver extraordinary value but often struggle to capture and communicate it without placing unsustainable burdens on their teams. This project was designed to solve exactly that, building funder-ready evidence while preserving the flexibility that makes community-led spaces effective.</p>
           <p><strong>The Approach</strong></p>
-          <p>Through field observation, evaluation design and shared learning processes, the partnership generates
-             insight in real time rather than retrospectively; enabling continuous reflection and adaptation as 
-             activities evolve, and strengthening understanding of what works and why.
-          </p>
-
+          <p>Through field observation, evaluation design and shared learning processes, the partnership generates insight in real time rather than retrospectively; enabling continuous reflection and adaptation as activities evolve, and strengthening understanding of what works and why.</p>
           <p><strong>The Partnership</strong></p>
-          <p>The University of Roehampton contributes academic direction and evaluation design expertise, while 
-            Kingston Hive brings deep local knowledge and community context. Together they support UKSPF 
-            priorities across organisational development, knowledge exchange and strengthened internal monitoring.
-          </p>
-
+          <p>The University of Roehampton contributes academic direction and evaluation design expertise, while Kingston Hive brings deep local knowledge and community context. Together they support UKSPF priorities across organisational development, knowledge exchange and strengthened internal monitoring.</p>
           <p><strong>The Impact</strong></p>
-          <p>Kingston Hive's capacity to clearly articulate the value of its community-led work is being 
-            strengthened in a way that is proportionate, flexible and well suited to a volunteer-led model; 
-            improving confidence in evaluation, funder-ready reporting and continuous internal learning.
-          </p>
-
+          <p>Kingston Hive's capacity to clearly articulate the value of its community-led work is being strengthened in a way that is proportionate, flexible and well suited to a volunteer-led model; improving confidence in evaluation, funder-ready reporting and continuous internal learning.</p>
           <p>Community-led. Evidence-informed. Proportionate by design.</p>
-        </div>     
+        </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header">Green Skills &amp; Employability Project</button>
         <div class="accordion-content">
-          <p>Our Green Skills projects provide pathways into the growing green economy, from retrofit and energy efficiency to digital and data for net zero.</p>
+          <p>Green Skills for South London is a knowledge exchange and community and business development initiative at the University of Roehampton, funded by the Mayor of London through the UK Shared Prosperity Fund (UKSPF), led by Professor Ayse Demir in partnership with Community Brain.</p>
+          <p>The project builds practical green skills within South London SMEs, university students and communities through hands-on training, applied learning, and a train-the-trainer model — bringing together NGOs, SMEs and universities to deliver activity aligned with funder priorities and real-world business needs.</p>
+          <p><strong>The Challenge</strong></p>
+          <p>South London's SMEs and communities are navigating the transition to a green economy without always having access to the practical tools, knowledge or networks they need. This project was designed to make green skills accessible, actionable and directly relevant to real businesses and real communities.</p>
+          <p><strong>The Approach</strong></p>
+          <p>Through a train-the-trainer model, businesses act as both beneficiaries and multipliers. Delivery includes training materials, workshops, applied learning activities and a hackathon-style collective workshop, bringing together SMEs and university students to focus on collaboration and the practical application of green skills.</p>
+          <p><strong>The Partnership</strong></p>
+          <p>Led by Professor Ayse Demir at the University of Roehampton, the project partners with Community Brain, who bring deep place-based knowledge and long-standing relationships with local businesses — particularly within Chessington Industrial Estate. Their trust-first, community-led engagement model ensures activity remains grounded, practical and business-led.</p>
+          <p><strong>The Impact</strong></p>
+          <p>The project contributes to UKSPF priorities including non-financial SME support (OP11), knowledge transfer (OC10), improved organisational productivity (OC12) and adoption of improved internal processes (OC13). Green Skills for South London is helping to build a greener, more resilient local economy — one business and one community at a time.</p>
         </div>
       </div>
 
