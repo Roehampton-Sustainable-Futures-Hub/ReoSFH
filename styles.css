@@ -1499,7 +1499,7 @@ textarea {
 }
 
 .hero-content p {
-  text-align: justify;
+  /* text-align: justify; */
   max-width: 100%;
 }
 
@@ -1808,19 +1808,19 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
 /* ============================================================
    PUBLICATIONS PAGE — Justified text
    ============================================================ */
-.pub-abstract,
+/* .pub-abstract,
 .pub-source,
 .pub-findings ul {
   text-align: justify;
-}
+} */
 
 /* ==================================================
    EVENTS PAGE — Justified text
    ================================================ */
-.event-card p,
+/* .event-card p,
 .event-extra p {
   text-align: justify;
-}
+} */
 
 /* ============================================================
    PROJECTS PAGE — Fix text visibility in project cards
@@ -2000,12 +2000,12 @@ OPENING UP PARAGRAPH ON LAPTOP TO COVER SCREEN
 /* ==============================================
 JUSTIFYING THE "ACCORDION" TEXT IN THE HOME PAGE
 ===============================================*/
-.home-tab-panel p,
+/* .home-tab-panel p,
 .home-tab-panel li,
 .accordion-content p,
 .accordion-content li {
   text-align: justify;
-}
+} */
 
 /* =============================
         SEARCH BUTTON STYLING
