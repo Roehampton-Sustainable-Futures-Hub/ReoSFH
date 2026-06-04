@@ -2100,3 +2100,15 @@ About page intro text background box
 .about-text-box p:last-child {
   margin-bottom: 0;
 }
+
+
+/* ======================================
+Event carousel image zoom on hover 
+======================================= */
+.event-carousel-track img {
+  transition: transform 0.3s ease;
+}
+
+.event-carousel-track img:hover {
+  transform: scale(1.05);
+}

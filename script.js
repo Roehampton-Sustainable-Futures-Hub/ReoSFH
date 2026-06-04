@@ -506,3 +506,35 @@ document.querySelectorAll('.project-read-more').forEach(function(btn) {
     }
   });
 });
+
+// ============================================================ 
+// Event card swipe carousel ──
+// Adapted from https://codepen.io/aaroniker/pen/KKVZyQK with touch and mouse drag support added
+// ============================================================ 
+document.querySelectorAll('.event-carousel').forEach(function(carousel) {
+  var track = carousel.querySelector('.event-carousel-track');
+  var total = track.children.length;
+  var current = 0;
+  var startX = 0;
+  var isDragging = false;
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+  }
+
+  // Touch
+  carousel.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  }, { passive: true });
+
+  // Mouse click
+carousel.addEventListener('click', function() {
+  goTo(current + 1);
+});
+});
