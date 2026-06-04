@@ -472,20 +472,41 @@ function sendEmail(e) {
 
 
 // =====================
-//      SEARCH BUTTON
+//   SITE SEARCH
 // =====================
+const searchIndex = [
+  { title: 'Home', url: 'index.html', content: 'roehampton sustainable futures hub university partnership driven sustainability academics students community groups smes ngos local authorities evidence led environmental solutions london award recognised empowering communities sustainable merton pilot uk parliament community capacity green skills applied research climate action air quality green living infrastructure circular economy innovation ayse demir ukspf big growth mayor london kingston hive a greener london community brain wandsworth council putney action group people planet partnership' },
+  { title: 'About', url: 'about.html', content: 'about hub climate action people university roehampton platform community centred sustainability researchers students residents councils businesses grassroots organisations greener fairer london partnership collaboration academic expertise lived experience local knowledge evidence led research london borough kingston wandsworth hammersmith fulham a greener london community brain kingston hive sustainable merton putney action group london smes co design workshops listening sessions place neighbourhoods high streets green spaces air quality green infrastructure circular economy retrofit merton early day motion 1753 vision ayse demir atiqur khan burcak erdogan onur eva idugboe abena abboah offei landscape architect environmental psychologist permaculture designer communications marketing web design' },
+  { title: 'Projects', url: 'projects.html', content: 'projects empowering change understanding optimising volunteer engagement sustainable impact merton 2024 2025 urban gardening zero waste food distribution community outreach intergenerational collaboration jesutowo fola alao uforo sundasen aderonke salau eva idugboe parliament early day motion 1753 paul kohler mp big south london ukspf alii air living infrastructure initiative air pollution urban air quality traffic emissions green walls street trees living roofs nature based solutions a greener london big growth kofi adele gabriela archana olu burcak kingston hive impact learning capacity building repair cafes sustainability education workshops volunteer led organisations evaluation framework aminat abena gabriela burcak green skills south london knowledge exchange community business development train trainer smes university students hands on training hackathon community brain mayor london op11 oc10 oc12 oc13 jennifer joseph uforo daniel ruth' },
+  { title: 'Events', url: 'events.html', content: 'events wandsworth net zero partnership roundtable 4 march 2026 sector leaders innovators students public private sectors greener resilient city wandsworth council a greener london south thames college eva idugboe gabriela molina murillas patrick orji abena abboah offei mohammed data accessible transformative skills development collaboration sustainability lived planned setec aubyn square passivhaus chessington industrial estate community forum 6 may 2026 local businesses workers community organisations sustainability green skills collaboration king george field indoor bowling club community brain roehampton sustainable futures hub national rescue protective textile company mollart engineering netherlands roehampton research innovation showcase 2026 12 may 2026 academics industry partners gut microbiome nutrition adele costabile heat regulation chris tyler ai chatbots psychology laura vowels community partnerships ayse demir dementia puzzle kaz brandt homelessness melissa jogie neurodiversity gambling luisa perrino backtobalance penumbra age uk chessington industrial estate business community forum 18 june 2026 sir ed davey mp king georges hall indoor bowls club jubilee way chessington kt6 7na' },
+  { title: 'Publications', url: 'publications.html', content: 'publications research reports papers sustainability green skills air quality community environmental urban london evidence policy academic' },
+  { title: 'Contact', url: 'contact.html', content: 'contact get in touch partner collaborate email message sustainability community project gmail name role interest organisation researcher business local authority' },
+];
+
+// Store index in sessionStorage so search.html can read it
+sessionStorage.setItem('searchIndex', JSON.stringify(searchIndex));
+
 const searchToggle = document.getElementById('searchToggle');
 const searchBar = document.getElementById('searchBar');
 const searchInput = document.getElementById('searchInput');
-if (searchToggle && searchBar) {
+
+if (searchToggle && searchBar && searchInput) {
   searchToggle.addEventListener('click', function(e) {
     e.stopPropagation();
     searchBar.classList.toggle('open');
     if (searchBar.classList.contains('open')) searchInput.focus();
   });
+
   document.addEventListener('click', function(e) {
     if (!searchBar.contains(e.target) && e.target !== searchToggle) {
       searchBar.classList.remove('open');
+    }
+  });
+
+  // On Enter key — go to search results page
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && searchInput.value.trim().length > 1) {
+      window.location.href = 'search.html?q=' + encodeURIComponent(searchInput.value.trim());
     }
   });
 }
@@ -538,3 +559,16 @@ carousel.addEventListener('click', function() {
   goTo(current + 1);
 });
 });
+
+
+// ============================================================
+// SITE SEARCH — Go to search results page on button click
+// ============================================================
+const searchSubmit = document.getElementById('searchSubmit');
+if (searchSubmit) {
+  searchSubmit.addEventListener('click', function() {
+    if (searchInput && searchInput.value.trim().length > 1) {
+      window.location.href = 'search.html?q=' + encodeURIComponent(searchInput.value.trim());
+    }
+  });
+}

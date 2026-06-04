@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results | Roehampton Sustainable Futures Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Roehampton Sustainable Futures hub logo.png" class="logo-img" alt="Roehampton Sustainable Futures Hub">
+      </a>
+      <span class="logo-text">Roehampton Sustainable Futures Hub</span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+      <a href="publications.html">Publications</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-search">
+      <button class="search-toggle" id="searchToggle" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <div class="search-bar" id="searchBar">
+        <input type="text" placeholder="Search the site..." class="search-input" id="searchInput">
+        <button class="search-submit" id="searchSubmit">Go</button>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </header>
+
+  <!-- ── SEARCH RESULTS ── -->
+  <main style="padding: 3rem 5vw; max-width: 860px; margin: 0 auto;">
+
+    <h1 style="font-family: var(--font-heading); color: var(--text-main); margin-bottom: 0.5rem;">Search Results</h1>
+    <p id="searchSummary" style="color: var(--text-muted); margin-bottom: 2rem;"></p>
+
+    <!-- Refine search -->
+    <div style="display:flex; gap:0.5rem; margin-bottom:2rem;">
+      <input type="text" id="refineInput" class="search-input" placeholder="Refine your search..."
+        style="background:#0d2b28; border:1px solid #0F5A54; border-radius:0.5rem; color:#ECEBEA; padding:0.5rem 0.75rem; font-size:0.9rem; flex:1;">
+      <button id="refineBtn" class="btn primary" style="border-radius:0.5rem;">Search</button>
+    </div>
+
+    <!-- Results list -->
+    <div id="resultsList"></div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Roehampton Sustainable Futures Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ── Read query from URL ──
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q') || '';
+    const refineInput = document.getElementById('refineInput');
+    const refineBtn = document.getElementById('refineBtn');
+    const resultsList = document.getElementById('resultsList');
+    const searchSummary = document.getElementById('searchSummary');
+
+    if (refineInput) refineInput.value = query;
+
+    // ── Load index from sessionStorage or fallback ──
+    let index = [];
+    try {
+      index = JSON.parse(sessionStorage.getItem('searchIndex')) || [];
+    } catch(e) {}
+
+    // Fallback if sessionStorage empty (direct navigation)
+    if (!index.length) {
+      index = [
+        { title: 'Home', url: 'index.html', content: 'roehampton sustainable futures hub university partnership sustainability academics students community groups smes ngos local authorities environmental solutions london merton pilot parliament community capacity green skills air quality circular economy ayse demir ukspf big growth mayor london kingston hive a greener london community brain wandsworth council people planet partnership' },
+        { title: 'About', url: 'about.html', content: 'about hub climate action people university roehampton community centred sustainability researchers students residents councils businesses london partnership collaboration academic expertise local knowledge research kingston wandsworth hammersmith fulham a greener london community brain kingston hive sustainable merton putney action group co design workshops listening sessions air quality green infrastructure circular economy retrofit merton early day motion 1753 ayse demir atiqur khan burcak erdogan onur eva idugboe abena abboah offei' },
+        { title: 'Projects', url: 'projects.html', content: 'projects empowering change volunteer engagement sustainable impact merton 2024 2025 urban gardening zero waste food distribution community outreach intergenerational collaboration jesutowo fola alao uforo sundasen aderonke salau eva idugboe parliament early day motion 1753 paul kohler mp big south london ukspf alii air living infrastructure initiative air pollution urban air quality green walls street trees living roofs nature based solutions a greener london big growth kofi adele gabriela archana olu burcak kingston hive impact learning capacity building repair cafes sustainability education workshops volunteer evaluation aminat abena green skills south london knowledge exchange train trainer smes university students hands on training hackathon community brain mayor london jennifer joseph uforo daniel ruth' },
+        { title: 'Events', url: 'events.html', content: 'events wandsworth net zero roundtable march 2026 wandsworth council a greener london south thames college eva idugboe gabriela patrick orji abena mohammed chessington industrial estate community forum may 2026 local businesses workers sustainability green skills collaboration king george field community brain national rescue protective textile mollart engineering roehampton research innovation showcase 12 may 2026 academics industry gut microbiome adele costabile heat regulation chris tyler ai chatbots laura vowels ayse demir dementia kaz brandt homelessness melissa jogie neurodiversity luisa perrino backtobalance penumbra age uk chessington business community forum 18 june 2026 sir ed davey mp king georges hall jubilee way chessington kt6 7na' },
+        { title: 'Publications', url: 'publications.html', content: 'publications research reports papers sustainability green skills air quality community environmental urban london evidence policy academic' },
+        { title: 'Contact', url: 'contact.html', content: 'contact get in touch partner collaborate email message sustainability community project name role interest organisation researcher business local authority' },
+      ];
+    }
+
+    function runSearch(q) {
+      resultsList.innerHTML = '';
+      const term = q.trim().toLowerCase();
+
+      if (term.length < 2) {
+        searchSummary.textContent = 'Please enter at least 2 characters.';
+        return;
+      }
+
+      const matches = index.filter(function(page) {
+        return page.content.toLowerCase().includes(term) ||
+               page.title.toLowerCase().includes(term);
+      });
+
+      searchSummary.textContent = matches.length
+        ? matches.length + ' result' + (matches.length > 1 ? 's' : '') + ' for "' + q + '"'
+        : 'No results found for "' + q + '"';
+
+      if (!matches.length) {
+        resultsList.innerHTML = '<p style="color:var(--text-muted);">Try a different search term — for example "air quality", "green skills", "events", or a person\'s name.</p>';
+        return;
+      }
+
+      matches.forEach(function(page) {
+        const content = page.content.toLowerCase();
+        const pos = content.indexOf(term);
+        const raw = page.content;
+        const snippet = pos !== -1
+          ? '...' + raw.substring(Math.max(0, pos - 40), pos + 80) + '...'
+          : raw.substring(0, 120) + '...';
+
+        const card = document.createElement('a');
+        card.href = page.url;
+        card.style.cssText = 'display:block; background:rgba(6,53,50,0.6); border:1px solid #0F5A54; border-radius:0.75rem; padding:1.25rem 1.5rem; margin-bottom:1rem; text-decoration:none; transition:background 0.2s ease;';
+        card.onmouseover = function() { card.style.background = 'rgba(0,160,110,0.2)'; };
+        card.onmouseout = function() { card.style.background = 'rgba(6,53,50,0.6)'; };
+        card.innerHTML =
+          '<div style="font-family:var(--font-heading); color:#4CCFA3; font-size:1.05rem; font-weight:600; margin-bottom:0.4rem;">' + page.title + '</div>' +
+          '<div style="color:rgba(236,235,234,0.75); font-size:0.85rem; line-height:1.6;">' + snippet + '</div>' +
+          '<div style="color:#00A06E; font-size:0.78rem; margin-top:0.5rem;">' + page.url + '</div>';
+        resultsList.appendChild(card);
+      });
+    }
+
+    // Run on load
+    runSearch(query);
+
+    // Refine button
+    if (refineBtn) {
+      refineBtn.addEventListener('click', function() {
+        const newQ = refineInput.value.trim();
+        if (newQ.length > 1) {
+          history.replaceState(null, '', 'search.html?q=' + encodeURIComponent(newQ));
+          runSearch(newQ);
+        }
+      });
+    }
+
+    if (refineInput) {
+      refineInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') refineBtn.click();
+      });
+    }
+  </script>
+
+</body>
+</html>

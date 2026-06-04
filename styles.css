@@ -2008,20 +2008,26 @@ JUSTIFYING THE "ACCORDION" TEXT IN THE HOME PAGE
 } */
 
 /* =============================
-        SEARCH BUTTON STYLING
+   SEARCH BUTTON STYLING
 ================================*/
 .site-search { display: flex; align-items: center; position: relative; }
 .search-toggle { background: none; border: none; color: #F2EEE9; cursor: pointer; padding: 0.25rem; display: flex; align-items: center; transition: color 0.2s ease; }
 .search-toggle:hover { color: #4CCFA3; }
-.search-bar { display: none; position: absolute; top: 2.5rem; right: 0; background: #063532; border: 1px solid #0F5A54; border-radius: 0.75rem; padding: 0.5rem; z-index: 200; width: 280px; }
+.search-bar { display: none; position: absolute; top: 2.5rem; right: 0; background: #063532; border: 1px solid #0F5A54; border-radius: 0.75rem; padding: 0.5rem; z-index: 200; width: 300px; }
 .search-bar.open { display: block; }
-.search-bar form { display: flex; gap: 0.4rem; }
-.search-input { flex: 1; background: #0d2b28; border: 1px solid #0F5A54; border-radius: 0.5rem; color: #ECEBEA; padding: 0.45rem 0.7rem; font-size: 0.85rem; font-family: inherit; }
+.search-input { width: 100%; background: #0d2b28; border: 1px solid #0F5A54; border-radius: 0.5rem; color: #ECEBEA; padding: 0.45rem 0.7rem; font-size: 0.85rem; font-family: inherit; box-sizing: border-box; }
 .search-input::placeholder { color: rgba(236,235,234,0.5); }
 .search-input:focus { outline: none; border-color: #4CCFA3; }
-.search-submit { background: #00A06E; border: none; border-radius: 0.5rem; color: #fff; padding: 0.45rem 0.75rem; font-size: 0.85rem; cursor: pointer; transition: background 0.2s ease; }
-.search-submit:hover { background: #007A55; }
-@media (max-width: 720px) { .search-bar { right: -3rem; width: 240px; } }
+
+/* Search results dropdown */
+.search-results { margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem; max-height: 260px; overflow-y: auto; }
+.search-result-item { background: #0d2b28; border: 1px solid #0F5A54; border-radius: 0.5rem; padding: 0.5rem 0.75rem; cursor: pointer; text-decoration: none; transition: background 0.2s ease; }
+.search-result-item:hover { background: rgba(0,160,110,0.2); }
+.search-result-item .result-title { color: #4CCFA3; font-size: 0.85rem; font-weight: 600; }
+.search-result-item .result-snippet { color: rgba(236,235,234,0.7); font-size: 0.78rem; margin-top: 0.2rem; }
+.search-no-results { color: rgba(236,235,234,0.5); font-size: 0.82rem; padding: 0.5rem 0.25rem; text-align: center; }
+
+@media (max-width: 720px) { .search-bar { right: -3rem; width: 260px; } }
 
 
 /* =================================================
