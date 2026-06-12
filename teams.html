@@ -3,106 +3,710 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roehampton Sustainable Futures Hub | Team</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <title>Roehampton Sustainable Futures Hub | Our Team</title>
+
+  <!-- ── Google Fonts ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ── Shared site styles ── -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- ── Shared site scripts ── -->
   <script src="script.js" defer></script>
 </head>
 <body>
-<!-- <header class="site-header">
-  <div class="logo">
-    <img src="Roehampton Sustainable Futures hub logo.png" alt="Roehampton Sustainable Futures Hub Logo" class="logo-img">
-    <span class="logo-text">Roehampton Sustainable Futures Hub</span>
-  </div>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programmes.html">Programmes</a>
-    <a href="team.html">Team</a>
-    <a href="impact.html">Impact</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-</header> -->
 
-
-<header class="site-header">
-  <div class="logo">
-    <a href="index.html">
-      <img src="Roehampton Sustainable Futures hub logo.png" class="logo-img" alt="Roehampton Sustainable Futures Hub">
-    </a>
-    <span class="logo-text">Roehampton Sustainable Futures Hub</span>
-  </div>
-
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <!-- <a href="team.html">Team</a> -->
-    <!-- <a href="impact.html">Impact</a> -->
-    <a href="events.html">Events</a>
-    <!-- <a href="publications.html">Publications</a> -->
-    <!-- <a href="partners.html">Partners</a> -->
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <button class="nav-toggle" id="navToggle">☰</button>
-</header>
-
-<main>
-  <section class="team">
-    <div class="section-heading">
-      <h2>The Team Behind the Mission</h2>
-      <p>
-        A multidisciplinary team of educators, strategists, and industry partners working together to
-        deliver high-impact green skills training.
-      </p>
+  <!-- ═══════════════════════════════════
+       HEADER & NAV
+  ════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Roehampton Sustainable Futures hub logo.png" class="logo-img" alt="Roehampton Sustainable Futures Hub">
+      </a>
+      <span class="logo-text">Roehampton Sustainable Futures Hub</span>
     </div>
 
-    <div class="team-grid">
-      <article class="team-member">
-        <div class="avatar">
-          <img src="https://via.placeholder.com/200x200.png?text=Team+Lead" alt="Programme Director" />
-        </div>
-        <h3>Programme Director</h3>
-        <p>Leads the strategic design of programmes aligned with London’s green skills priorities.</p>
-      </article>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <!-- <a href="impact.html">Impact</a> -->
+      <a href="events.html">Events</a>
+      <a href="publications.html">Publications</a>
+      <!-- <a href="partners.html">Partners</a> -->
+      <a href="contact.html">Contact</a>
+    </nav>
 
-      <article class="team-member">
-        <div class="avatar">
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQG43vvM7i6dBg/profile-displayphoto-shrink_800_800/B4DZVTzga8HkAc-/0/1740867766471"
-               alt="Lead Trainer" class="evi-image lazy-image imgedit-profile-photo-frame-viewer__target-image ember-view" />
-        </div>
-        <h3>Lead Trainer</h3>
-        <p>Delivers hands-on learning experiences that connect theory with real-world practice.</p>
-        <p>
-          <a href="https://www.linkedin.com/in/ofosua-abboah-offei-a104201b8" target="_blank">
-            🔗 LinkedIn Profile
-          </a>
-        </p>
-      </article>
-
-      <article class="team-member">
-        <div class="avatar">
-          <img src="https://via.placeholder.com/200x200.png?text=Employer+Liaison" alt="Employer Partnerships Lead" />
-        </div>
-        <h3>Employer Partnerships Lead</h3>
-        <p>Builds and maintains relationships with employers across key green sectors.</p>
-      </article>
-
-      <article class="team-member">
-        <div class="avatar">
-          <img src="https://via.placeholder.com/200x200.png?text=Coordinator" alt="Programme Coordinator" />
-        </div>
-        <h3>Programme Coordinator</h3>
-        <p>Ensures learners and partners have a seamless, supportive experience from start to finish.</p>
-      </article>
+    <!-- ── Site search ── -->
+    <div class="site-search">
+      <button class="search-toggle" id="searchToggle" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <div class="search-bar" id="searchBar">
+        <input type="text" placeholder="Search the site..." class="search-input" id="searchInput">
+        <div class="search-results" id="searchResults"></div>
+      </div>
     </div>
-  </section>
-</main>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> Roehampton Sustainable Futures Hub. All rights reserved.</p>
-</footer>
+    <!-- ── Mobile nav toggle ── -->
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </header>
+
+
+  <!-- ═══════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════ -->
+  <main>
+
+    <!-- ── Page heading ── -->
+    <div class="section-heading" style="padding-top:3rem;">
+      <h2>Our Team</h2>
+      <p>The people leading and delivering the Roehampton Sustainable Futures Hub across research, community engagement and digital infrastructure.</p>
+    </div>
+
+
+    <!-- ═══════════════════════════════════
+         HUB LEADERSHIP
+    ════════════════════════════════════ -->
+    <section class="about" id="hub-leadership">
+      <div class="section-heading">
+        <h2>Hub Leadership</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- ── Ayse Demir ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Ayse Demir.jpg" alt="Dr. Ayse Demir" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Dr. Ayse Demir<br>
+            <span class="team-role">Hub Director</span>
+          </h3>
+          <p class="bio-short"><em>Project Director of the Roehampton Sustainable Futures Hub and Associate Professor in the Faculty of Business and Law.</em></p>
+          <div class="bio-full">
+            <p>Dr. Ayse Demir leads the strategic direction, partnerships and research agenda of the Roehampton Sustainable Futures Hub. Her work bridges sustainability, community development, green skills, inclusive economies and evidence‑led policy.</p>
+            <p>She has led major applied research programmes on air quality, green infrastructure, gender equity, financial inclusion, and the role of SMEs in sustainable development. Her leadership ensures that the Hub's work is grounded in community priorities, academic rigour and long‑term impact.</p>
+            <p>Dr. Demir champions co‑creation, working closely with residents, grassroots groups and local authorities to design sustainability projects that are practical, equitable and rooted in lived experience.</p>
+            <p>She also creates opportunities for Roehampton students to engage in live sustainability projects through placements, dissertations and community‑based research, strengthening both student learning and community capacity.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/ayse-demir-a7ab0713a/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+        </div>
+
+        <!-- ── Stephen Drinkwater ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Stephen-Drinkwater.png" alt="Prof. Stephen Drinkwater" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Prof. Stephen Drinkwater<br>
+            <span class="team-role">Co-Director</span>
+          </h3>
+          <p class="bio-short"><em>Co-Director of the Roehampton Sustainable Futures Hub and Professor in the Faculty of Business and Law, University of Roehampton.</em></p>
+          <div class="bio-full">
+            <p>Prof. Stephen Drinkwater co-leads the strategic direction, partnerships and research agenda of the Roehampton Sustainable Futures Hub. His work bridges sustainability, community development, green skills, inclusive economies and evidence‑led policy.</p>
+            <p>Prof. Drinkwater champions co‑creation, working closely with residents, grassroots groups and local authorities to design sustainability projects that are practical, equitable and rooted in lived experience.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://pure.roehampton.ac.uk/portal/en/persons/stephen-drinkwater/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">Profile</a>
+        </div>
+
+        <!-- ── Atiqur Khan ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Atiqur Khan.jpg" alt="Dr. Atiqur Khan" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Dr. Atiqur Khan<br>
+            <span class="team-role">Deputy Director</span>
+          </h3>
+          <p class="bio-short"><em>Senior Lecturer in Finance &amp; Governance and key academic collaborator within the Roehampton Sustainable Futures Hub.</em></p>
+          <div class="bio-full">
+            <p>Dr. Atiqur (Atiq) Khan is a Senior Lecturer in Finance and Governance at the University of Roehampton's Faculty of Business and Law. His work strengthens the Hub's mission by bringing deep expertise in sustainable finance, climate‑related risk, green economic transitions, and the resilience of financial systems.</p>
+            <p>His research examines how financial institutions, SMEs, and national economies respond to climate change, environmental policy, and sustainability‑driven regulatory shifts.</p>
+            <p>Dr. Khan has contributed to major international research projects, including a Marie Skłodowska‑Curie Fellowship on green economic transitions, a Development Bank of Wales project on SME environmental policy responses, and a Malaysian FRGS grant on renewable energy and deforestation.</p>
+            <p>Within the Hub, he supports research design, evaluation, and financial governance, ensuring that sustainability initiatives are both environmentally sound and economically viable.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/md-atiqur-rahman-khan-411b5717/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+        </div>
+
+        <!-- ── Burcak ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Burcak.jpg" alt="Dr. Burçak Erdoğan Onur" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Dr. Burçak Erdoğan Onur<br>
+            <span class="team-role">Landscape Architect &amp; Environmental Psychologist</span>
+          </h3>
+          <p class="bio-short"><em>Landscape Architect, Environmental Psychologist, Researcher and Permaculture Designer contributing to community‑centred sustainability work at the Hub.</em></p>
+          <div class="bio-full">
+            <p>Dr. Burçak Erdoğan Onur is a Landscape Architect, Environmental Psychologist, Researcher and Permaculture Designer whose work bridges ecological design, human wellbeing and community‑led sustainability.</p>
+            <p>Her expertise spans nature‑based solutions, environmental behaviour, sustainable place‑making, and regenerative design. She contributes to the Hub's research and community projects, including the inaugural pilot initiative recognised in the UK Parliament.</p>
+            <p>Her work helps the Hub design sustainability initiatives that are human‑centred, ecologically grounded and socially meaningful, aligning with the Hub's People–Planet–Partnership approach.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/burcak-erdogan-onur/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+        </div>
+
+        <!-- ── Eva ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Eva.jpeg" alt="Eva Idugboe" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Eva Idugboe<br>
+            <span class="team-role">Communications &amp; Marketing Lead</span>
+          </h3>
+          <p class="bio-short"><em>Leads communications, digital strategy and community partnerships for the Roehampton Sustainable Futures Hub.</em></p>
+          <div class="bio-full">
+            <p>Eva plays a central role in shaping how the Roehampton Sustainable Futures Hub communicates its mission, impact and opportunities. She leads on storytelling, digital strategy and community‑focused engagement across the Hub's projects.</p>
+            <p>With experience across community development, creative communications and partnership building, Eva brings a unique ability to translate complex sustainability themes into clear, compelling narratives.</p>
+            <p>Eva also co‑leads the Hub's communications and marketing function, overseeing social media, events visibility, brand alignment and content development across LinkedIn, Instagram and Facebook.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/eva-idugboe-o/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+        </div>
+
+        <!-- ── Abena ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Abena.JPG" alt="Abena Ofosua Abboah-Offei" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Abena Ofosua Abboah-Offei<br>
+            <span class="team-role">Web Design &amp; Digital Infrastructure</span>
+          </h3>
+          <p class="bio-short"><em>Leads the Hub's digital presence, branding and web infrastructure, ensuring our work is accessible, engaging and aligned with our People–Planet–Partnership mission.</em></p>
+          <div class="bio-full">
+            <p>Abena plays a key role in shaping the Roehampton Sustainable Futures Hub's digital identity and communications. She leads on web design, branding, content development and digital infrastructure.</p>
+            <p>Her work spans website development, visual identity, social media alignment and digital storytelling, ensuring that project pages, events, impact stories and community partnerships are communicated clearly and professionally.</p>
+            <p>She collaborates closely with project leads, students, community partners and the communications team to translate complex sustainability themes into engaging digital content.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/abena-ofosua-abboah-offei/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         ALII RESEARCH TEAM
+    ════════════════════════════════════ -->
+    <section class="about" id="team-alii">
+      <div class="section-heading">
+        <h2>ALII — Air &amp; Living Infrastructure Initiative</h2>
+        <p>Research team working on urban air quality monitoring and nature-based solutions across London. 
+          January 2026 – Ongoing.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- ── Adele ThankGod ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to adele-thankgod.jpg and upload to repo -->
+            <img src="Adele.png" alt="Adele ThankGod" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>adele-thankgod.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Adele ThankGod<br>
+            <span class="team-role">Air Quality &amp; Environmental Analyst</span>
+          </h3>
+          <p class="bio-short"><em>Research Assistant contributing air quality analysis and environmental data 
+            expertise to the ALII initiative.</em></p>
+          <div class="bio-full">
+            <p>Adele ThankGod is an Air Quality and Environmental Analyst Research Assistant on the ALII project,
+               leveraging SPSS, R, Excel and field monitoring to support evidence-led air quality and green
+                infrastructure interventions, and impact reporting. Her analytical work helps translate complex 
+                environmental data into practical, community-relevant insights that inform the initiative's 
+                ongoing delivery.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#alii" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Weijia Luo ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to weijia-luo.jpg and upload to repo -->
+            <img src="Weijia.png" alt="Weijia Luo" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>weijia-luo.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Weijia Luo<br>
+            <span class="team-role">Environmental Technology Specialist</span>
+          </h3>
+          <p class="bio-short"><em>Research Assistant bringing expertise in sustainable cities, urban 
+            environments and GIS analysis to the ALII initiative.</em></p>
+          <div class="bio-full">
+            <p>Weijia is an Environmental Technology graduate from Imperial College London, specialising in 
+              sustainable cities and urban environments. She brings a strong foundation in environmental science
+               with hands-on project experience in sustainable transport planning and GIS analysis. Her skills 
+               support the ALII initiative's work on green infrastructure and localised environmental monitoring
+                across London boroughs.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#alii" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Kofi Ofori-Mensah ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to kofi-ofori-mensah.jpg and upload to repo -->
+            <img src="Kofi.png" alt="Kofi Ofori-Mensah" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>kofi-ofori-mensah.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Kofi Ofori-Mensah<br>
+            <span class="team-role">Business Analyst</span>
+          </h3>
+          <p class="bio-short"><em>Research Assistant bringing analytical and digital strategy expertise to 
+            support the ALII initiative's data and reporting needs.</em></p>
+          <div class="bio-full">
+            <p>Kofi Ofori-Mensah is a results-driven Business Analyst with a strong background in finance, 
+              operations, and digital strategy, specialising in translating complex data into actionable 
+              insights that drive efficiency and growth. He brings a structured, analytical approach to 
+              stakeholder requirements, process optimisation, and decision-making across cross-functional 
+              and impact-focused environments. Within ALII, his work supports data management, impact reporting
+               and the translation of monitoring outputs into evidence that communities and planners can act 
+               on.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#alii" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+
+        <!-- ── Gabriela Molina Murillas ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to gabriela-molina-murillas.jpg and upload to repo -->
+            <img src="Gabriela.png" alt="Gabriela Molina Murillas" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>gabriela-molina-murillas.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Gabriela Molina Murillas<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting impact evaluation and UKSPF reporting for the Kingston Hive and Green Skills projects.</em></p>
+          <div class="bio-full">
+            <!-- [Replace with full bio when available.] -->
+            <p>Gabriela Molina Murillas is an International Business and Logistics specialist pursuing an
+               MSc in Global Business Management at the University of Roehampton, with strong skills in data 
+               analysis, SAP, and Excel. As a Research Assistant, she supports impact evaluation and UKSPF 
+               reporting for the Kingston Hive and Green Skills projects, helping to translate field activity 
+               into clear, funder-ready evidence that demonstrates community impact.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#kingston-hive" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+
+        <!-- ── Archana Tiwari ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to archana-tiwari.jpg and upload to repo -->
+            <img src="Archana.png" alt="Archana Tiwari" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>archana-tiwari.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Archana Tiwari<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Contributing to applied environmental research and data-driven analysis within the ALII initiative.</em></p>
+          <div class="bio-full">
+            <p>Archana Tiwari supports the ALII initiative through applied environmental research, 
+              contributing to the collection and analysis of air quality data across target London locations.
+               Her work helps build the evidence base that underpins ALII's recommendations for green 
+               infrastructure and nature-based solutions. 
+               <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#alii" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Oluwafemi Oshofisan ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to oluwafemi-oshofisan.jpg and upload to repo -->
+            <img src="oluwafemi-oshofisan.jpg" alt="Oluwafemi Oshofisan" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>oluwafemi-oshofisan.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Oluwafemi Oshofisan<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting environmental monitoring and field research delivery within the ALII initiative.</em></p>
+          <div class="bio-full">
+            <p>Oluwafemi Oshofisan contributes to the ALII initiative through environmental monitoring
+               support and field research delivery. His work assists in generating the localised pollution
+                data that informs the project's green infrastructure pilots and supports the initiative's 
+                broader net zero and sustainability ambitions. 
+                <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#alii" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         KINGSTON HIVE RESEARCH TEAM
+    ════════════════════════════════════ -->
+    <section class="about" id="team-kingston">
+      <div class="section-heading">
+        <h2>Kingston Hive — Impact, Learning &amp; Capacity Building</h2>
+        <p>Research team supporting evaluation, shared learning and organisational development at Kingston Hive. January – April 2026.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- ── Gabriela Molina Murillas ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to gabriela-molina-murillas.jpg and upload to repo -->
+            <img src="Gabriela.png" alt="Gabriela Molina Murillas" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>gabriela-molina-murillas.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Gabriela Molina Murillas<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting impact evaluation and UKSPF reporting for the Kingston Hive and Green Skills projects.</em></p>
+          <div class="bio-full">
+            <!-- [Replace with full bio when available.] -->
+            <p>Gabriela Molina Murillas is an International Business and Logistics specialist pursuing an
+               MSc in Global Business Management at the University of Roehampton, with strong skills in data 
+               analysis, SAP, and Excel. As a Research Assistant, she supports impact evaluation and UKSPF 
+               reporting for the Kingston Hive and Green Skills projects, helping to translate field activity 
+               into clear, funder-ready evidence that demonstrates community impact.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#kingston-hive" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Jesutowo Fola-Alao ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to jesutowo-fola-alao.jpg and upload to repo -->
+            <img src="jesutowo-fola-alao.jpg" alt="Jesutowo Fola-Alao" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>jesutowo-fola-alao.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Jesutowo Fola-Alao<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting evaluation design and community engagement within the Kingston Hive project.</em></p>
+          <div class="bio-full">
+            <!-- <p>Jesutowo Fola-Alao contributes to the Kingston Hive Impact, Learning and Capacity Building
+               Project through evaluation support and community engagement. Her work helps strengthen how Kingston
+                Hive captures and communicates the value of its volunteer-led activities, ensuring that community 
+                impact is evidenced in ways that are proportionate and meaningful. 
+                [Replace with full bio when available.]</p> -->
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#kingston-hive" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Aminat Adekola ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to aminat-adekola.jpg and upload to repo -->
+            <img src="aminat-adekola.jpg" alt="Aminat Adekola" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>aminat-adekola.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Aminat Adekola<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Contributing to field observation and shared learning processes at Kingston Hive.</em></p>
+          <div class="bio-full">
+            <p>Aminat Adekola supports the Kingston Hive project through field observation and participation in 
+              shared learning processes. Her contributions help the partnership generate real-time insight into 
+              community activities, enabling continuous reflection and adaptation as the project evolves. 
+              <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#kingston-hive" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Eva (Kingston) ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Eva.jpeg" alt="Eva Idugboe" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Eva Idugboe<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Contributing to community engagement and impact communication within the Kingston Hive project.</em></p>
+          <div class="bio-full">
+            <p>Eva Idugboe contributes to the Kingston Hive project through community engagement and impact 
+              communication support. Drawing on her broader communications and digital strategy expertise, she 
+              helps ensure that the project's outcomes are clearly documented and shared in ways that strengthen 
+              Kingston Hive's visibility and credibility with funders and partners.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/eva-idugboe-o/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#kingston-hive" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Abena (Kingston) ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Abena.JPG" alt="Abena Ofosua Abboah-Offei" class="team-photo">
+          </div>
+          <h3 style="text-align:center;">
+            Abena Abboah-Offei<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting digital documentation and reporting within the Kingston Hive capacity building project.</em></p>
+          <div class="bio-full">
+            <p>Abena Abboah-Offei supports the Kingston Hive project through digital documentation and reporting, ensuring that field activity, learning insights and impact data are captured clearly and made accessible to project stakeholders. Her work complements the project's broader goal of building proportionate, funder-ready evidence for a volunteer-led organisation.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="https://www.linkedin.com/in/abena-ofosua-abboah-offei/" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#kingston-hive" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         GREEN SKILLS RESEARCH TEAM
+    ════════════════════════════════════ -->
+    <section class="about" id="team-greenskills">
+      <div class="section-heading">
+        <h2>Green Skills for South London</h2>
+        <p>Research team delivering green skills training and community engagement across South London SMEs. January 2026 – Ongoing.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- ── Ruth Kamble ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to ruth-kamble.jpg and upload to repo -->
+            <img src="Ruth.png" alt="Ruth Kamble" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>ruth-kamble.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Ruth Kamble<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting sustainability education and SME engagement within the Green Skills for South London project.</em></p>
+          <div class="bio-full">
+            <p>Ruth Kamble is an MSc Global Business Management student at the University of Roehampton with a strong interest in sustainability, CSR, and ethical business practices. She is keen to learn, collaborate, and contribute meaningfully to initiatives that support responsible and sustainable development. Within the Green Skills project, Ruth supports SME engagement, workshop delivery and the practical application of sustainability tools with local businesses.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#green-skills" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Gabriela (Green Skills) ── -->
+        <!-- <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <img src="Gabriela.png" alt="Gabriela Molina Murillas" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>gabriela-molina-murillas.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Gabriela Molina Murillas<br>
+            <span class="team-role">Research Assistant</span>
+          </h3> -->
+          <!-- <p class="bio-short"><em>Supporting impact evaluation and UKSPF reporting for the Kingston Hive and Green Skills projects.</em></p>
+          <div class="bio-full">
+            <p>Gabriela Molina Murillas is an International Business and Logistics specialist pursuing an MSc in Global Business Management at the University of Roehampton, with strong skills in data analysis, SAP, and Excel. As a Research Assistant, she supports impact evaluation and UKSPF reporting for the Green Skills project, helping to translate training and workshop activity into clear, funder-ready evidence of impact.</p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#green-skills" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div> -->
+
+        <!-- ── Jennifer Yankson ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to jennifer-yankson.jpg and upload to repo -->
+            <img src="jennifer-yankson.jpg" alt="Jennifer Yankson" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>jennifer-yankson.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Jennifer Yankson<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting training delivery and SME engagement within the Green Skills for South London project.</em></p>
+          <div class="bio-full">
+            <p>Jennifer Yankson contributes to the Green Skills for South London project through 
+              training delivery support and SME engagement. Her work helps connect local businesses 
+              with practical sustainability tools and knowledge, contributing to the project's 
+              train-the-trainer model and supporting businesses to adopt improved green practices. 
+              <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#green-skills" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Joseph Uzochukwu ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to joseph-uzochukwu.jpg and upload to repo -->
+            <img src="joseph-uzochukwu.jpg" alt="Joseph Uzochukwu" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>joseph-uzochukwu.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Joseph Uzochukwu<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Contributing to workshop delivery and applied learning activities within Green Skills for South London.</em></p>
+          <div class="bio-full">
+            <p>Joseph Uzochukwu contributes to the Green Skills for South London project through workshop 
+              facilitation and applied learning support. His work helps bring SMEs and university 
+              students together in practical, collaborative settings — including the project's 
+              hackathon-style workshops — to apply green skills to real business challenges. 
+              <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#green-skills" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Uforo Sundasen ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to uforo-sundasen.jpg and upload to repo -->
+            <img src="uforo-sundasen.jpg" alt="Uforo Sundasen" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>uforo-sundasen.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Uforo Sundasen<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Supporting community engagement and SME outreach within the Green Skills for South London initiative.</em></p>
+          <div class="bio-full">
+            <p>Uforo Sundasen supports the Green Skills for South London project through community engagement
+               and SME outreach, helping to build the trusted relationships with local businesses that underpin
+                the project's community-led, trust-first model. Her work contributes to the project's delivery
+                 at Chessington Industrial Estate and its broader South London reach. 
+                 <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#green-skills" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+        <!-- ── Daniel Elijah ── -->
+        <div class="about-card team-card">
+          <div style="text-align:center; margin-bottom:1rem;">
+            <!-- REPLACE: rename your photo to daniel-elijah.jpg and upload to repo -->
+            <img src="daniel-elijah.jpg" alt="Daniel Elijah" class="team-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:120px; height:120px; border-radius:999px; background:#0d2b28; border:2px solid #00A06E; margin:0 auto; align-items:center; justify-content:center;">
+              <span style="color:#4CCFA3; font-size:0.75rem; text-align:center; padding:0.5rem;">Add photo:<br>daniel-elijah.jpg</span>
+            </div>
+          </div>
+          <h3 style="text-align:center;">
+            Daniel Elijah<br>
+            <span class="team-role">Research Assistant</span>
+          </h3>
+          <p class="bio-short"><em>Contributing to training materials and knowledge exchange activities within Green Skills for South London.</em></p>
+          <div class="bio-full">
+            <p>Daniel Elijah contributes to the Green Skills for South London project through the development
+               of training materials and support for knowledge exchange activities between SMEs and university
+                students. His work helps ensure that green skills content is relevant, accessible and directly 
+                applicable to the day-to-day challenges faced by local businesses. 
+                <!-- [Replace with full bio when available.]</p> --></p>
+          </div>
+          <button class="btn secondary read-more-btn">Read More</button>
+          <a href="#" target="_blank" class="btn primary" style="margin-top:1rem; width:100%; text-align:center;">LinkedIn Profile</a>
+          <a href="projects.html#green-skills" class="btn secondary" style="margin-top:0.5rem; width:100%; text-align:center;">View Project</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── CTA ── -->
+    <section class="cta-section" style="margin: 3rem 5vw;">
+      <h2>Work With Our Team</h2>
+      <p>Whether you are a researcher, community organisation, business or local authority, we would love to connect. Explore how you can collaborate with the Roehampton Sustainable Futures Hub.</p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem; margin-top:1.5rem;">
+        <a href="projects.html" class="btn primary">Our Projects</a>
+        <a href="contact.html" class="btn secondary">Get in Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Roehampton Sustainable Futures Hub. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
