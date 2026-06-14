@@ -1608,6 +1608,29 @@ textarea {
 }
 
 
+/* ── Carousel dots indicator ── */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(236, 235, 234, 0.3);
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: #4CCFA3;
+  width: 20px;
+}
+
+
+
 /* Accordion spacing on mobile */
 .home-accordion-mobile .accordion-item {
   margin-bottom: 0.75rem;
